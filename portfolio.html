@@ -59,6 +59,11 @@
 </head>
 <body class="flex flex-col min-h-screen">
 
+    <!-- Maintenance Banner -->
+    <div class="bg-red-600 text-white text-center py-2 px-4 font-bold animate-pulse w-full z-[60] relative">
+        ⚠️  I am currently developing this webpage, so it is currently in maintenance.  ⚠️
+    </div>
+
     <!-- Chosen Palette: Warm Neutral & Tech Blue (#faf9f8 background, #334155 text, #2563eb accent) -->
     <!-- Application Structure Plan: A clean, horizontal tab-based Single Page Application. This minimizes scrolling friction and logically segments the user's professional life. The structure uses a sticky top navigation bar for constant accessibility, and dynamic JavaScript to swap content views instantly without page reloads, mirroring the smooth experience of a native iOS app. -->
     <!-- Visualization & Content Choices: The Skills section utilizes a Chart.js Radar chart to visually represent technical proficiencies across different iOS domains (Swift, Architecture, CI/CD). This provides a quick, scannable, and engaging way for recruiters to assess expertise compared to a standard bulleted list. The Experience section uses a CSS timeline. -->
@@ -66,20 +71,33 @@
 
     <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between h-auto md:h-16 py-4 md:py-0">
-                <div class="flex items-center justify-center md:justify-start mb-4 md:mb-0">
+            <div class="flex flex-wrap justify-between items-center h-auto md:h-16 py-4 md:py-0">
+                <div class="flex items-center justify-start">
                     <span class="font-bold text-xl tracking-tight text-slate-900">Tejaskumar Patel</span>
                 </div>
-                <div class="flex overflow-x-auto hide-scroll pb-2 md:pb-0 items-center space-x-4 sm:space-x-8 text-sm font-medium">
-                    <button id="nav-about" onclick="switchTab('about')" class="nav-link active-tab whitespace-nowrap pb-1">About</button>
-                    <button id="nav-experience" onclick="switchTab('experience')" class="nav-link whitespace-nowrap pb-1">Experience</button>
-                    <button id="nav-skills" onclick="switchTab('skills')" class="nav-link whitespace-nowrap pb-1">Skills</button>
-                    <button id="nav-projects" onclick="switchTab('projects')" class="nav-link whitespace-nowrap pb-1">Projects</button>
-                    <button id="nav-education" onclick="switchTab('education')" class="nav-link whitespace-nowrap pb-1">Education</button>
-                    <button id="nav-certifications" onclick="switchTab('certifications')" class="nav-link whitespace-nowrap pb-1">Certifications</button>
-                    <button id="nav-interests" onclick="switchTab('interests')" class="nav-link whitespace-nowrap pb-1">Interests</button>
-                    <button id="nav-resume" onclick="switchTab('resume')" class="nav-link whitespace-nowrap pb-1">Resume</button>
-                    <button id="nav-contact" onclick="switchTab('contact')" class="nav-link whitespace-nowrap pb-1">Contact</button>
+                
+                <!-- Mobile Menu Button -->
+                <div class="block md:hidden">
+                    <button onclick="toggleMobileMenu()" class="p-2 -mr-2 text-slate-600 hover:text-blue-600 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Navigation Links -->
+                <div id="mobile-menu" class="hidden w-full md:flex md:w-auto md:items-center mt-4 md:mt-0 pb-2 md:pb-0">
+                    <div class="flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-4 lg:space-x-8 text-sm font-medium w-full">
+                        <button id="nav-about" onclick="switchTab('about')" class="nav-link active-tab text-left w-full md:w-auto whitespace-nowrap pb-1">About</button>
+                        <button id="nav-experience" onclick="switchTab('experience')" class="nav-link text-left w-full md:w-auto whitespace-nowrap pb-1">Experience</button>
+                        <button id="nav-skills" onclick="switchTab('skills')" class="nav-link text-left w-full md:w-auto whitespace-nowrap pb-1">Skills</button>
+                        <button id="nav-projects" onclick="switchTab('projects')" class="nav-link text-left w-full md:w-auto whitespace-nowrap pb-1">Projects</button>
+                        <button id="nav-education" onclick="switchTab('education')" class="nav-link text-left w-full md:w-auto whitespace-nowrap pb-1">Education</button>
+                        <button id="nav-certifications" onclick="switchTab('certifications')" class="nav-link text-left w-full md:w-auto whitespace-nowrap pb-1">Certifications</button>
+                        <button id="nav-interests" onclick="switchTab('interests')" class="nav-link text-left w-full md:w-auto whitespace-nowrap pb-1">Interests</button>
+                        <button id="nav-resume" onclick="switchTab('resume')" class="nav-link text-left w-full md:w-auto whitespace-nowrap pb-1">Resume</button>
+                        <button id="nav-contact" onclick="switchTab('contact')" class="nav-link text-left w-full md:w-auto whitespace-nowrap pb-1">Contact</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -92,10 +110,10 @@
                 <div class="flex-1 text-center md:text-left">
                     <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Crafting Enterprise-Grade <br><span class="text-blue-600">iOS Experiences</span></h1>
                     <p class="text-lg text-slate-600 mb-6 leading-relaxed">
-                        Hello! I am <strong>Tejaskumar Patel</strong>, a Senior iOS Developer with over 10 years of experience designing, architecting, and building scalable iOS applications. With a Master's degree in Computer Science Engineering, I blend robust academic foundations with a decade of hands-on industry expertise.
+                        Hello! I am <strong>Tejaskumar Patel</strong>, a Senior iOS Engineer based in Berlin, Germany, with over 10 years of experience designing, architecting, and building scalable iOS applications. With a Master's degree in Computer Engineering, I drive architecture decisions, stability, scalability, and long-term maintainability for products used by millions.
                     </p>
                     <p class="text-lg text-slate-600 mb-8 leading-relaxed">
-                        I specialize in Swift, SwiftUI and Objective-C, and modern architectural patterns like MVVM to deliver high-performance apps that millions of users rely on daily.
+                        I specialize in Swift, SwiftUI, UIKit, and modern architectural patterns like MVVM. In my recent roles, I have architected apps with over 1M+ downloads, enhanced performance by 20%, reduced crash rates by 90%, and spearheaded the integration of AI capabilities.
                     </p>
                     <button onclick="switchTab('contact')" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition duration-200">
                         Get in Touch
@@ -112,34 +130,35 @@
                 
                 <div class="timeline-border mb-10">
                     <div class="timeline-dot"></div>
-                    <h3 class="text-xl font-semibold text-slate-900">Senior iOS Developer</h3>
-                    <p class="text-blue-600 font-medium mb-2">[UPDATE THIS: Company Name] &bull; [Start Year] - Present</p>
+                    <h3 class="text-xl font-semibold text-slate-900">Senior iOS Engineer/Technical Lead - Projects</h3>
+                    <p class="text-blue-600 font-medium mb-2">Cognizant &bull; Dec 2023 - Dec 2025 &bull; Hyderabad, India</p>
                     <ul class="list-disc list-inside text-slate-600 space-y-2">
-                        <li>[UPDATE THIS: Architected and scaled main enterprise application...]</li>
-                        <li>[UPDATE THIS: Migrated legacy Objective-C codebase to Swift...]</li>
-                        <li>[UPDATE THIS: Improved app launch time by X%...]</li>
-                        <li>[UPDATE THIS: Mentored junior developers and established CI/CD pipelines.]</li>
+                        <li>Led end-to-end iOS architecture and delivery for production applications with over 1M cumulative downloads.</li>
+                        <li>Enhanced app performance by 20% and reduced crash rates by 90% through strategic architectural refactoring.</li>
+                        <li>Spearheaded the integration of AI bots within mobile applications, enabling intelligent feature automation at scale.</li>
+                        <li>Mentored a team of 6 iOS engineers, establishing high code quality standards and efficient workflows.</li>
                     </ul>
                 </div>
 
                 <div class="timeline-border mb-10">
                     <div class="timeline-dot"></div>
-                    <h3 class="text-xl font-semibold text-slate-900">iOS Developer</h3>
-                    <p class="text-blue-600 font-medium mb-2">[UPDATE THIS: Previous Company Name] &bull; [Start Year] - [End Year]</p>
+                    <h3 class="text-xl font-semibold text-slate-900">Team Lead - iOS / Sr. Software Engineer</h3>
+                    <p class="text-blue-600 font-medium mb-2">EbizzInfotech &bull; May 2020 - Oct 2023 &bull; Surat, India</p>
                     <ul class="list-disc list-inside text-slate-600 space-y-2">
-                        <li>[UPDATE THIS: Developed features for an app with 1M+ active users...]</li>
-                        <li>[UPDATE THIS: Integrated complex RESTful APIs and optimized CoreData...]</li>
-                        <li>[UPDATE THIS: Collaborated closely with UI/UX teams for pixel-perfect designs.]</li>
+                        <li>Directed iOS project execution from architecture planning to App Store deployment, ensuring performance and efficiency.</li>
+                        <li>Built and mentored a high-performing iOS mobile team of 5 members by implementing coding standards and peer reviews.</li>
+                        <li>Translated business requirements into scalable technical solutions through proactive collaboration with stakeholders.</li>
+                        <li>Led the design and development of scalable iOS applications, driving performance optimization initiatives.</li>
                     </ul>
                 </div>
 
                 <div class="timeline-border">
                     <div class="timeline-dot"></div>
-                    <h3 class="text-xl font-semibold text-slate-900">Software Engineer (Mobile)</h3>
-                    <p class="text-blue-600 font-medium mb-2">[UPDATE THIS: Early Company Name] &bull; [Start Year] - [End Year]</p>
+                    <h3 class="text-xl font-semibold text-slate-900">Senior iOS Developer</h3>
+                    <p class="text-blue-600 font-medium mb-2">Innovative Iteration Software Solutions &bull; Aug 2017 - Apr 2020 &bull; Surat, India</p>
                     <ul class="list-disc list-inside text-slate-600 space-y-2">
-                        <li>[UPDATE THIS: Built foundational mobile modules using Objective-C...]</li>
-                        <li>[UPDATE THIS: Handled bug fixes, performance monitoring, and unit testing...]</li>
+                        <li>Designed and developed high-quality mobile applications for iOS platforms, ensuring optimal user experience.</li>
+                        <li>Optimized application performance by implementing best practices and staying updated with emerging iOS technologies.</li>
                     </ul>
                 </div>
             </div>
@@ -158,7 +177,7 @@
                 <div class="w-full md:w-1/2 grid grid-cols-2 gap-4">
                     <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
                         <h4 class="font-bold text-slate-900 mb-2">Languages</h4>
-                        <p class="text-slate-600 text-sm">Swift, Objective-C, C++, JavaScript</p>
+                        <p class="text-slate-600 text-sm">Swift, Objective-C</p>
                     </div>
                     <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
                         <h4 class="font-bold text-slate-900 mb-2">Frameworks</h4>
@@ -166,11 +185,15 @@
                     </div>
                     <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
                         <h4 class="font-bold text-slate-900 mb-2">Architecture</h4>
-                        <p class="text-slate-600 text-sm">MVVM, Clean Architecture, MVC</p>
+                        <p class="text-slate-600 text-sm">MVC, MVVM, Clean Architecture, Modular Architecture Design</p>
                     </div>
                     <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
                         <h4 class="font-bold text-slate-900 mb-2">Tools & CI/CD</h4>
                         <p class="text-slate-600 text-sm">Xcode, Git, Jenkins, Fastlane, Firebase</p>
+                    </div>
+                     <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                        <h4 class="font-bold text-slate-900 mb-2">AI & Advanced Tools</h4>
+                        <p class="text-slate-600 text-sm">Prompt Engineering, LLMs, Artificial Intelligence</p>
                     </div>
                 </div>
             </div>
@@ -181,76 +204,46 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 
                 <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition">
-                    <div class="h-48 bg-slate-200 flex items-center justify-center text-slate-400">
-                        [UPDATE THIS: Project 1 Image/Mockup]
+                    <div class="h-48 bg-blue-50 flex items-center justify-center text-blue-300 text-6xl">
+                        &#x1F4F1;
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">[UPDATE THIS: Enterprise Banking App]</h3>
-                        <p class="text-slate-600 mb-4">[UPDATE THIS: A high-security financial application used by thousands. Implemented biometric auth, real-time transaction sockets, and robust modular architecture.]</p>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Enterprise App Refactoring</h3>
+                        <p class="text-slate-600 mb-4">Led end-to-end iOS architecture and delivery for a production application with over 1M cumulative downloads. Enhanced app performance by 20% and reduced crash rates by 90%.</p>
                         <div class="flex flex-wrap gap-2">
                             <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">Swift</span>
-                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">VIPER</span>
-                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">CoreData</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">MVVM</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">Architecture</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition">
-                    <div class="h-48 bg-slate-200 flex items-center justify-center text-slate-400">
-                        [UPDATE THIS: Project 2 Image/Mockup]
+                    <div class="h-48 bg-blue-50 flex items-center justify-center text-blue-300 text-6xl">
+                        &#x1F916;
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">[UPDATE THIS: Health & Fitness Tracker]</h3>
-                        <p class="text-slate-600 mb-4">[UPDATE THIS: An interactive tracking app utilizing HealthKit and complex data visualization. Built entirely in SwiftUI with Combine for reactive state management.]</p>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">AI Bot Integration</h3>
+                        <p class="text-slate-600 mb-4">Spearheaded the integration of AI bots within mobile applications, leveraging Large Language Models (LLMs) to enable intelligent feature automation at scale.</p>
                         <div class="flex flex-wrap gap-2">
                             <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">SwiftUI</span>
-                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">Combine</span>
-                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">HealthKit</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">Prompt Engineering</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">LLMs</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition">
-                    <div class="h-48 bg-slate-200 flex items-center justify-center text-slate-400">
-                        [UPDATE THIS: Project 2 Image/Mockup]
+                    <div class="h-48 bg-blue-50 flex items-center justify-center text-blue-300 text-6xl">
+                        &#x1F4D6;
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">[UPDATE THIS: Health & Fitness Tracker]</h3>
-                        <p class="text-slate-600 mb-4">[UPDATE THIS: An interactive tracking app utilizing HealthKit and complex data visualization. Built entirely in SwiftUI with Combine for reactive state management.]</p>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Deep Learning Food Image Recognition</h3>
+                        <p class="text-slate-600 mb-4">Published a survey research paper on deep learning-based food image recognition, exploring advanced computer vision techniques and modern AI algorithms.</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">SwiftUI</span>
-                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">Combine</span>
-                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">HealthKit</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition">
-                    <div class="h-48 bg-slate-200 flex items-center justify-center text-slate-400">
-                        [UPDATE THIS: Project 2 Image/Mockup]
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">[UPDATE THIS: Health & Fitness Tracker]</h3>
-                        <p class="text-slate-600 mb-4">[UPDATE THIS: An interactive tracking app utilizing HealthKit and complex data visualization. Built entirely in SwiftUI with Combine for reactive state management.]</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">SwiftUI</span>
-                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">Combine</span>
-                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">HealthKit</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition">
-                    <div class="h-48 bg-slate-200 flex items-center justify-center text-slate-400">
-                        [UPDATE THIS: Project 2 Image/Mockup]
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">[UPDATE THIS: Health & Fitness Tracker]</h3>
-                        <p class="text-slate-600 mb-4">[UPDATE THIS: An interactive tracking app utilizing HealthKit and complex data visualization. Built entirely in SwiftUI with Combine for reactive state management.]</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">SwiftUI</span>
-                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">Combine</span>
-                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">HealthKit</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">Publication</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">Deep Learning</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">AI</span>
                         </div>
                     </div>
                 </div>
@@ -263,10 +256,10 @@
             <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100 flex items-start gap-6">
                 <div class="text-4xl">&#x1F393;</div>
                 <div>
-                    <h3 class="text-2xl font-bold text-slate-900">Master of Science in Computer Science Engineering</h3>
-                    <p class="text-blue-600 font-medium text-lg mb-2">[UPDATE THIS: University Name] &bull; [Graduation Year]</p>
+                    <h3 class="text-2xl font-bold text-slate-900">Master of Technology - MTech, Computer Engineering</h3>
+                    <p class="text-blue-600 font-medium text-lg mb-2">Parul Institute of Engg. and Tech., Limda &bull; June 2018 - June 2020</p>
                     <p class="text-slate-600">
-                        [UPDATE THIS: Briefly mention your thesis, major projects, or specific focus areas during your master's degree. For example: Focused on mobile computing, advanced algorithms, and software engineering principles.]
+                        Published research on Deep Learning Based Food Image Recognition: A Survey.
                     </p>
                 </div>
             </div>
@@ -274,8 +267,16 @@
             <div class="mt-6 bg-white p-8 rounded-xl shadow-sm border border-slate-100 flex items-start gap-6">
                 <div class="text-4xl">&#x1F4DA;</div>
                 <div>
-                    <h3 class="text-2xl font-bold text-slate-900">Bachelor of Science in Computer Science</h3>
-                    <p class="text-blue-600 font-medium text-lg mb-2">[UPDATE THIS: University Name] &bull; [Graduation Year]</p>
+                    <h3 class="text-2xl font-bold text-slate-900">Bachelor of Engineering (BE), Computer Science</h3>
+                    <p class="text-blue-600 font-medium text-lg mb-2">MGITER, Navsari &bull; 2011 - 2014</p>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-white p-8 rounded-xl shadow-sm border border-slate-100 flex items-start gap-6">
+                <div class="text-4xl">&#x1F4DA;</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-900">Diploma Computer Engineer</h3>
+                    <p class="text-blue-600 font-medium text-lg mb-2">Bhagwan Mahaveer Polytechnic, Surat &bull; 2008 - 2011</p>
                 </div>
             </div>
         </section>
@@ -287,24 +288,32 @@
                 <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex items-center gap-4">
                     <div class="text-3xl">&#x1F3C5;</div>
                     <div>
-                        <h4 class="font-bold text-slate-900">[UPDATE THIS: Apple Certified iOS Developer]</h4>
-                        <p class="text-sm text-slate-500">[UPDATE THIS: Issuing Organization] &bull; [Year]</p>
+                        <h4 class="font-bold text-slate-900">Project Planning: Putting It All Together</h4>
+                        <p class="text-sm text-slate-500">Professional Certification</p>
                     </div>
                 </div>
 
                 <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex items-center gap-4">
                     <div class="text-3xl">&#x1F3C5;</div>
                     <div>
-                        <h4 class="font-bold text-slate-900">[UPDATE THIS: Advanced SwiftUI Architecture]</h4>
-                        <p class="text-sm text-slate-500">[UPDATE THIS: Issuing Organization] &bull; [Year]</p>
+                        <h4 class="font-bold text-slate-900">Working with Data in iOS</h4>
+                        <p class="text-sm text-slate-500">Professional Certification</p>
                     </div>
                 </div>
 
                 <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex items-center gap-4">
                     <div class="text-3xl">&#x1F3C5;</div>
                     <div>
-                        <h4 class="font-bold text-slate-900">[UPDATE THIS: Agile Scrum Master]</h4>
-                        <p class="text-sm text-slate-500">[UPDATE THIS: Issuing Organization] &bull; [Year]</p>
+                        <h4 class="font-bold text-slate-900">Principles of UX/UI Design</h4>
+                        <p class="text-sm text-slate-500">Professional Certification</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex items-center gap-4">
+                    <div class="text-3xl">&#x1F3C5;</div>
+                    <div>
+                        <h4 class="font-bold text-slate-900">AI Tools Workshop</h4>
+                        <p class="text-sm text-slate-500">Professional Certification</p>
                     </div>
                 </div>
 
@@ -317,20 +326,20 @@
             
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                 <div class="p-6 bg-white rounded-xl shadow-sm border border-slate-100 hover:-translate-y-1 transition duration-200">
-                    <div class="text-4xl mb-4">&#x1F4F7;</div>
-                    <h4 class="font-bold text-slate-900">[UPDATE THIS: Photography]</h4>
+                    <div class="text-4xl mb-4">&#x1F916;</div>
+                    <h4 class="font-bold text-slate-900">AI Trends</h4>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-sm border border-slate-100 hover:-translate-y-1 transition duration-200">
+                    <div class="text-4xl mb-4">&#x1F4DA;</div>
+                    <h4 class="font-bold text-slate-900">Research</h4>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-sm border border-slate-100 hover:-translate-y-1 transition duration-200">
+                    <div class="text-4xl mb-4">&#x1F310;</div>
+                    <h4 class="font-bold text-slate-900">Languages</h4>
                 </div>
                 <div class="p-6 bg-white rounded-xl shadow-sm border border-slate-100 hover:-translate-y-1 transition duration-200">
                     <div class="text-4xl mb-4">&#x2708;&#xFE0F;</div>
-                    <h4 class="font-bold text-slate-900">[UPDATE THIS: Traveling]</h4>
-                </div>
-                <div class="p-6 bg-white rounded-xl shadow-sm border border-slate-100 hover:-translate-y-1 transition duration-200">
-                    <div class="text-4xl mb-4">&#x1F4D6;</div>
-                    <h4 class="font-bold text-slate-900">[UPDATE THIS: Tech Blogging]</h4>
-                </div>
-                <div class="p-6 bg-white rounded-xl shadow-sm border border-slate-100 hover:-translate-y-1 transition duration-200">
-                    <div class="text-4xl mb-4">&#x2615;</div>
-                    <h4 class="font-bold text-slate-900">[UPDATE THIS: Coffee Brewing]</h4>
+                    <h4 class="font-bold text-slate-900">Traveling</h4>
                 </div>
             </div>
         </section>
@@ -365,6 +374,9 @@
                     <a href="https://github.com/tejas786u" target="_blank" class="flex items-center gap-3 text-xl text-slate-700 hover:text-blue-600 transition">
                         <span>&#x1F4BB;</span> GitHub Profile
                     </a>
+                    <div class="flex items-center gap-3 text-xl text-slate-700">
+                        <span>&#x1F4CD;</span> Berlin, Germany
+                    </div>
                 </div>
             </div>
         </section>
@@ -383,22 +395,57 @@
         const tabs = ['about', 'experience', 'skills', 'projects', 'education', 'certifications', 'interests', 'resume', 'contact'];
         let chartRendered = false;
 
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
         function switchTab(activeTabId) {
             tabs.forEach(tabId => {
                 document.getElementById(tabId).classList.add('hidden');
                 document.getElementById('nav-' + tabId).classList.remove('active-tab');
             });
 
-            document.getElementById(activeTabId).classList.remove('hidden');
+            const activeSection = document.getElementById(activeTabId);
+            activeSection.classList.remove('hidden');
             document.getElementById('nav-' + activeTabId).classList.add('active-tab');
 
-            if (activeTabId === 'skills' && !chartRendered) {
-                renderSkillsChart();
-                chartRendered = true;
+            // Lazy load the section content if it hasn't been fetched yet
+            if (activeSection.innerHTML.trim() === '') {
+                fetch('sections/' + activeTabId + '.html')
+                    .then(response => {
+                        if (!response.ok) throw new Error('Network response was not ok');
+                        return response.text();
+                    })
+                    .then(html => {
+                        activeSection.innerHTML = html;
+                        if (activeTabId === 'skills') {
+                            renderSkillsChart();
+                            chartRendered = true;
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error loading section:', error);
+                        activeSection.innerHTML = `<div class="text-center py-12 text-red-600 font-bold"><p>⚠️ Error loading section.</p><p class="text-sm mt-2 font-normal">If you are viewing this locally, please open it using a local web server (like VS Code Live Server) due to browser CORS security policies.</p></div>`;
+                    });
+            } else if (activeTabId === 'skills' && !chartRendered) {
+                 renderSkillsChart();
+                 chartRendered = true;
             }
             
+            // Close mobile menu if it is open
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+
             window.scrollTo(0, 0);
         }
+
+        // Load initial tab content on page load
+        document.addEventListener("DOMContentLoaded", () => {
+            switchTab('about');
+        });
 
         function renderSkillsChart() {
             const ctx = document.getElementById('skillsChart').getContext('2d');
