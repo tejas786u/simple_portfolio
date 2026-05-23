@@ -1,513 +1,691 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tejaskumar Patel | Senior iOS Developer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Outfit', sans-serif;
-            background-color: #faf9f8;
-            color: #334155;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-        .nav-link {
-            transition: all 0.2s ease-in-out;
-        }
-        .nav-link:hover {
-            color: #2563eb;
-        }
-        .active-tab {
-            color: #2563eb;
-            border-bottom: 2px solid #2563eb;
-        }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 350px;
-            max-height: 400px;
-        }
-        .timeline-border {
-            border-left: 2px solid #e2e8f0;
-            margin-left: 1rem;
-            padding-left: 2rem;
-            position: relative;
-        }
-        .timeline-dot {
-            position: absolute;
-            width: 12px;
-            height: 12px;
-            background-color: #2563eb;
-            border-radius: 50%;
-            left: -7px;
-            top: 6px;
-        }
-        @media (min-width: 768px) {
-            .chart-container {
-                height: 400px;
-            }
-        }
-    </style>
-</head>
-<body class="flex flex-col min-h-screen">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tejaskumar Patel — Senior iOS Developer</title>
+  <link rel="stylesheet" href="style.css" />
 
-    <!-- Maintenance Banner -->
-    <div class="bg-red-600 text-white text-center py-2 px-4 font-bold animate-pulse w-full z-[60] relative">
-        ⚠️  I am currently developing this webpage, so it is currently in maintenance.  ⚠️
+  <!--
+  ============================================================
+  FONT: Google Product Sans (via Google Fonts approximation)
+  Product Sans isn't publicly available via CDN, so we use
+  "Google Sans" fallback approach with Nunito as the closest
+  open-source match. If you have access to Product Sans,
+  replace the @font-face in style.css.
+  ============================================================
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">
+      <!-- ✏️ UPDATE: Your initials or short name -->
+      <span class="brand-text">TP</span>
     </div>
 
-    <!-- Chosen Palette: Warm Neutral & Tech Blue (#faf9f8 background, #334155 text, #2563eb accent) -->
-    <!-- Application Structure Plan: A clean, horizontal tab-based Single Page Application. This minimizes scrolling friction and logically segments the user's professional life. The structure uses a sticky top navigation bar for constant accessibility, and dynamic JavaScript to swap content views instantly without page reloads, mirroring the smooth experience of a native iOS app. -->
-    <!-- Visualization & Content Choices: The Skills section utilizes a Chart.js Radar chart to visually represent technical proficiencies across different iOS domains (Swift, Architecture, CI/CD). This provides a quick, scannable, and engaging way for recruiters to assess expertise compared to a standard bulleted list. The Experience section uses a CSS timeline. -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" class="nav-link active">About</a></li>
+      <li><a href="#interests" class="nav-link">Interests</a></li>
+      <li><a href="#education" class="nav-link">Education</a></li>
+      <li><a href="#certifications" class="nav-link">Certifications</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#resume" class="nav-link">Resume</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
 
-    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-wrap justify-between items-center h-auto md:h-16 py-4 md:py-0">
-                <div class="flex items-center justify-start">
-                    <span class="font-bold text-xl tracking-tight text-slate-900">Tejaskumar Patel</span>
-                </div>
-                
-                <!-- Mobile Menu Button -->
-                <div class="block md:hidden">
-                    <button onclick="toggleMobileMenu()" class="p-2 -mr-2 text-slate-600 hover:text-blue-600 focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-moon" id="themeIcon"></i>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
-                <!-- Navigation Links -->
-                <div id="mobile-menu" class="hidden w-full md:flex md:w-auto md:items-center mt-4 md:mt-0 pb-2 md:pb-0">
-                    <div class="flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-4 lg:space-x-8 text-sm font-medium w-full">
-                        <button id="nav-about" onclick="switchTab('about')" class="nav-link active-tab text-left w-full md:w-auto whitespace-nowrap pb-1">About</button>
-                        <button id="nav-experience" onclick="switchTab('experience')" class="nav-link text-left w-full md:w-auto whitespace-nowrap pb-1">Experience</button>
-                        <button id="nav-skills" onclick="switchTab('skills')" class="nav-link text-left w-full md:w-auto whitespace-nowrap pb-1">Skills</button>
-                        <button id="nav-projects" onclick="switchTab('projects')" class="nav-link text-left w-full md:w-auto whitespace-nowrap pb-1">Projects</button>
-                        <button id="nav-education" onclick="switchTab('education')" class="nav-link text-left w-full md:w-auto whitespace-nowrap pb-1">Education</button>
-                        <button id="nav-certifications" onclick="switchTab('certifications')" class="nav-link text-left w-full md:w-auto whitespace-nowrap pb-1">Certifications</button>
-                        <button id="nav-interests" onclick="switchTab('interests')" class="nav-link text-left w-full md:w-auto whitespace-nowrap pb-1">Interests</button>
-                        <button id="nav-resume" onclick="switchTab('resume')" class="nav-link text-left w-full md:w-auto whitespace-nowrap pb-1">Resume</button>
-                        <button id="nav-contact" onclick="switchTab('contact')" class="nav-link text-left w-full md:w-auto whitespace-nowrap pb-1">Contact</button>
-                    </div>
-                </div>
-            </div>
+  <!-- ========== HERO / ABOUT ========== -->
+  <section class="hero" id="about">
+    <div class="hero-bg">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="grid-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-avatar">
+        <!-- ✏️ UPDATE: Replace with your actual photo path e.g. src="assets/photo.jpg" -->
+        <div class="avatar-placeholder">
+          <span>TP</span>
         </div>
-    </nav>
+        <div class="avatar-ring"></div>
+        <div class="avatar-status">
+          <span class="status-dot"></span>
+          <!-- ✏️ UPDATE: Your availability status -->
+          <span>Available for opportunities</span>
+        </div>
+      </div>
 
-    <main class="flex-grow max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
+      <div class="hero-text">
+        <p class="hero-greeting">👋 Hello, I'm</p>
+        <!-- ✏️ UPDATE: Your full name -->
+        <h1 class="hero-name">Tejaskumar Patel</h1>
+        <div class="hero-title">
+          <span class="title-prefix">Senior </span>
+          <span class="typing-wrapper">
+            <span class="typing-text" id="typingText"></span>
+            <span class="cursor">|</span>
+          </span>
+        </div>
 
-        <section id="about" class="tab-content animate-fade-in block">
-            <div class="flex flex-col-reverse md:flex-row items-center gap-12">
-                <div class="flex-1 text-center md:text-left">
-                    <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Crafting Enterprise-Grade <br><span class="text-blue-600">iOS Experiences</span></h1>
-                    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
-                        Hello! I am <strong>Tejaskumar Patel</strong>, a Senior iOS Engineer based in Berlin, Germany, with over 10 years of experience designing, architecting, and building scalable iOS applications. With a Master's degree in Computer Engineering, I drive architecture decisions, stability, scalability, and long-term maintainability for products used by millions.
-                    </p>
-                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
-                        I specialize in Swift, SwiftUI, UIKit, and modern architectural patterns like MVVM. In my recent roles, I have architected apps with over 1M+ downloads, enhanced performance by 20%, reduced crash rates by 90%, and spearheaded the integration of AI capabilities.
-                    </p>
-                    <button onclick="switchTab('contact')" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition duration-200">
-                        Get in Touch
-                    </button>
-                </div>
-                <img src="profile.jpg" alt="Tejaskumar Patel" class="w-48 h-48 md:w-72 md:h-72 rounded-full object-cover shadow-xl border-4 border-white">
+        <!-- ✏️ UPDATE: Your short bio / tagline -->
+        <p class="hero-bio">
+          10+ years crafting scalable, enterprise-grade iOS applications that reach millions of users.
+          Based in <strong>Berlin, Germany</strong> — blending deep Swift expertise with an AI-native development workflow.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i> Get in Touch
+          </a>
+          <a href="#resume" class="btn btn-secondary">
+            <i class="fas fa-file-arrow-down"></i> Download CV
+          </a>
+        </div>
+
+        <!-- ✏️ UPDATE: Your social links -->
+        <div class="hero-socials">
+          <a href="https://github.com/YOUR_GITHUB" target="_blank" class="social-icon" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" class="social-icon" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:itejaskumarpatel@gmail.com" class="social-icon" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- ========== INTERESTS ========== -->
+  <section class="section" id="interests">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What drives me</span>
+        <h2 class="section-title">Interests</h2>
+      </div>
+
+      <div class="interests-grid">
+        <!-- ✏️ UPDATE: Add/remove/edit interest cards -->
+        <div class="interest-card">
+          <div class="interest-icon"><i class="fab fa-apple"></i></div>
+          <h3>iOS & Apple Ecosystem</h3>
+          <p>Passionate about crafting delightful, performant apps on Apple platforms using Swift and SwiftUI.</p>
+        </div>
+        <div class="interest-card">
+          <div class="interest-icon"><i class="fas fa-robot"></i></div>
+          <h3>AI-Assisted Development</h3>
+          <p>Exploring how AI tools like Claude Code and GitHub Copilot can accelerate engineering without sacrificing quality.</p>
+        </div>
+        <div class="interest-card">
+          <div class="interest-icon"><i class="fas fa-music"></i></div>
+          <h3>Music</h3>
+          <p>Playing violin and piano — music sharpens focus and fuels creative thinking in my development work.</p>
+        </div>
+        <div class="interest-card">
+          <div class="interest-icon"><i class="fas fa-plane-departure"></i></div>
+          <h3>Travelling</h3>
+          <p>Exploring new cultures and cities — currently calling Berlin home after relocating from India.</p>
+        </div>
+        <div class="interest-card">
+          <div class="interest-icon"><i class="fas fa-book-open"></i></div>
+          <h3>Reading</h3>
+          <p>Deep-diving into technical books, engineering blogs, and ideas that sit at the edge of technology and design.</p>
+        </div>
+        <div class="interest-card">
+          <div class="interest-icon"><i class="fas fa-cubes"></i></div>
+          <h3>Architecture & Clean Code</h3>
+          <p>Obsessed with MVVM, Clean Architecture, and patterns that make codebases maintainable at scale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EDUCATION ========== -->
+  <section class="section section-alt" id="education">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Academic background</span>
+        <h2 class="section-title">Education</h2>
+      </div>
+
+      <div class="timeline">
+        <!-- ✏️ UPDATE: Your education entries -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-title">Master of Engineering — Computer Science</h3>
+                <!-- ✏️ UPDATE: University name -->
+                <p class="timeline-subtitle">Your University Name</p>
+              </div>
+              <!-- ✏️ UPDATE: Years -->
+              <span class="timeline-badge">20XX – 20XX</span>
             </div>
-        </section>
-
-        <section id="experience" class="tab-content hidden">
-            <div class="max-w-3xl mx-auto">
-                <h2 class="text-3xl font-bold text-slate-900 mb-8">Professional Experience</h2>
-                <p class="text-slate-600 mb-8">A timeline of my 10+ years shaping mobile products.</p>
-                
-                <div class="timeline-border mb-10">
-                    <div class="timeline-dot"></div>
-                    <h3 class="text-xl font-semibold text-slate-900">Senior iOS Engineer/Technical Lead - Projects</h3>
-                    <p class="text-blue-600 font-medium mb-2">Cognizant &bull; Dec 2023 - Dec 2025 &bull; Hyderabad, India</p>
-                    <ul class="list-disc list-inside text-slate-600 space-y-2">
-                        <li>Led end-to-end iOS architecture and delivery for production applications with over 1M cumulative downloads.</li>
-                        <li>Enhanced app performance by 20% and reduced crash rates by 90% through strategic architectural refactoring.</li>
-                        <li>Spearheaded the integration of AI bots within mobile applications, enabling intelligent feature automation at scale.</li>
-                        <li>Mentored a team of 6 iOS engineers, establishing high code quality standards and efficient workflows.</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-border mb-10">
-                    <div class="timeline-dot"></div>
-                    <h3 class="text-xl font-semibold text-slate-900">Team Lead - iOS / Sr. Software Engineer</h3>
-                    <p class="text-blue-600 font-medium mb-2">EbizzInfotech &bull; May 2020 - Oct 2023 &bull; Surat, India</p>
-                    <ul class="list-disc list-inside text-slate-600 space-y-2">
-                        <li>Directed iOS project execution from architecture planning to App Store deployment, ensuring performance and efficiency.</li>
-                        <li>Built and mentored a high-performing iOS mobile team of 5 members by implementing coding standards and peer reviews.</li>
-                        <li>Translated business requirements into scalable technical solutions through proactive collaboration with stakeholders.</li>
-                        <li>Led the design and development of scalable iOS applications, driving performance optimization initiatives.</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-border">
-                    <div class="timeline-dot"></div>
-                    <h3 class="text-xl font-semibold text-slate-900">Senior iOS Developer</h3>
-                    <p class="text-blue-600 font-medium mb-2">Innovative Iteration Software Solutions &bull; Aug 2017 - Apr 2020 &bull; Surat, India</p>
-                    <ul class="list-disc list-inside text-slate-600 space-y-2">
-                        <li>Designed and developed high-quality mobile applications for iOS platforms, ensuring optimal user experience.</li>
-                        <li>Optimized application performance by implementing best practices and staying updated with emerging iOS technologies.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="tab-content hidden">
-            <h2 class="text-3xl font-bold text-slate-900 mb-4 text-center">Technical Proficiency</h2>
-            <p class="text-slate-600 mb-8 text-center max-w-2xl mx-auto">A visual representation of my core competencies across the iOS development ecosystem, cultivated over a decade of enterprise engineering.</p>
-            
-            <div class="flex flex-col md:flex-row gap-8 items-center">
-                <div class="w-full md:w-1/2">
-                    <div class="chart-container">
-                        <canvas id="skillsChart"></canvas>
-                    </div>
-                </div>
-                <div class="w-full md:w-1/2 grid grid-cols-2 gap-4">
-                    <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
-                        <h4 class="font-bold text-slate-900 mb-2">Languages</h4>
-                        <p class="text-slate-600 text-sm">Swift, Objective-C</p>
-                    </div>
-                    <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
-                        <h4 class="font-bold text-slate-900 mb-2">Frameworks</h4>
-                        <p class="text-slate-600 text-sm">SwiftUI, UIKit, CoreData, Combine, XCTest</p>
-                    </div>
-                    <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
-                        <h4 class="font-bold text-slate-900 mb-2">Architecture</h4>
-                        <p class="text-slate-600 text-sm">MVC, MVVM, Clean Architecture, Modular Architecture Design</p>
-                    </div>
-                    <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
-                        <h4 class="font-bold text-slate-900 mb-2">Tools & CI/CD</h4>
-                        <p class="text-slate-600 text-sm">Xcode, Git, Jenkins, Fastlane, Firebase</p>
-                    </div>
-                     <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
-                        <h4 class="font-bold text-slate-900 mb-2">AI & Advanced Tools</h4>
-                        <p class="text-slate-600 text-sm">Prompt Engineering, LLMs, Artificial Intelligence</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="tab-content hidden">
-            <h2 class="text-3xl font-bold text-slate-900 mb-8">Featured Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
-                <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition">
-                    <div class="h-48 bg-blue-50 flex items-center justify-center text-blue-300 text-6xl">
-                        &#x1F4F1;
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Enterprise App Refactoring</h3>
-                        <p class="text-slate-600 mb-4">Led end-to-end iOS architecture and delivery for a production application with over 1M cumulative downloads. Enhanced app performance by 20% and reduced crash rates by 90%.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">Swift</span>
-                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">MVVM</span>
-                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">Architecture</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition">
-                    <div class="h-48 bg-blue-50 flex items-center justify-center text-blue-300 text-6xl">
-                        &#x1F916;
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">AI Bot Integration</h3>
-                        <p class="text-slate-600 mb-4">Spearheaded the integration of AI bots within mobile applications, leveraging Large Language Models (LLMs) to enable intelligent feature automation at scale.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">SwiftUI</span>
-                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">Prompt Engineering</span>
-                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">LLMs</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition">
-                    <div class="h-48 bg-blue-50 flex items-center justify-center text-blue-300 text-6xl">
-                        &#x1F4D6;
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Deep Learning Food Image Recognition</h3>
-                        <p class="text-slate-600 mb-4">Published a survey research paper on deep learning-based food image recognition, exploring advanced computer vision techniques and modern AI algorithms.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">Publication</span>
-                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">Deep Learning</span>
-                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">AI</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="education" class="tab-content hidden">
-            <h2 class="text-3xl font-bold text-slate-900 mb-8">Education</h2>
-            <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100 flex items-start gap-6">
-                <div class="text-4xl">&#x1F393;</div>
-                <div>
-                    <h3 class="text-2xl font-bold text-slate-900">Master of Technology - MTech, Computer Engineering</h3>
-                    <p class="text-blue-600 font-medium text-lg mb-2">Parul Institute of Engg. and Tech., Limda &bull; June 2018 - June 2020</p>
-                    <p class="text-slate-600">
-                        Published research on Deep Learning Based Food Image Recognition: A Survey.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="mt-6 bg-white p-8 rounded-xl shadow-sm border border-slate-100 flex items-start gap-6">
-                <div class="text-4xl">&#x1F4DA;</div>
-                <div>
-                    <h3 class="text-2xl font-bold text-slate-900">Bachelor of Engineering (BE), Computer Science</h3>
-                    <p class="text-blue-600 font-medium text-lg mb-2">MGITER, Navsari &bull; 2011 - 2014</p>
-                </div>
-            </div>
-
-            <div class="mt-6 bg-white p-8 rounded-xl shadow-sm border border-slate-100 flex items-start gap-6">
-                <div class="text-4xl">&#x1F4DA;</div>
-                <div>
-                    <h3 class="text-2xl font-bold text-slate-900">Diploma Computer Engineer</h3>
-                    <p class="text-blue-600 font-medium text-lg mb-2">Bhagwan Mahaveer Polytechnic, Surat &bull; 2008 - 2011</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="certifications" class="tab-content hidden">
-            <h2 class="text-3xl font-bold text-slate-900 mb-8">Online Certifications</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex items-center gap-4">
-                    <div class="text-3xl">&#x1F3C5;</div>
-                    <div>
-                        <h4 class="font-bold text-slate-900">Project Planning: Putting It All Together</h4>
-                        <p class="text-sm text-slate-500">Professional Certification</p>
-                    </div>
-                </div>
-
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex items-center gap-4">
-                    <div class="text-3xl">&#x1F3C5;</div>
-                    <div>
-                        <h4 class="font-bold text-slate-900">Working with Data in iOS</h4>
-                        <p class="text-sm text-slate-500">Professional Certification</p>
-                    </div>
-                </div>
-
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex items-center gap-4">
-                    <div class="text-3xl">&#x1F3C5;</div>
-                    <div>
-                        <h4 class="font-bold text-slate-900">Principles of UX/UI Design</h4>
-                        <p class="text-sm text-slate-500">Professional Certification</p>
-                    </div>
-                </div>
-
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex items-center gap-4">
-                    <div class="text-3xl">&#x1F3C5;</div>
-                    <div>
-                        <h4 class="font-bold text-slate-900">AI Tools Workshop</h4>
-                        <p class="text-sm text-slate-500">Professional Certification</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="interests" class="tab-content hidden">
-            <h2 class="text-3xl font-bold text-slate-900 mb-8 text-center">Beyond the Code</h2>
-            <p class="text-center text-slate-600 mb-10">What keeps me inspired and balanced outside of Xcode.</p>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                <div class="p-6 bg-white rounded-xl shadow-sm border border-slate-100 hover:-translate-y-1 transition duration-200">
-                    <div class="text-4xl mb-4">&#x1F916;</div>
-                    <h4 class="font-bold text-slate-900">AI Trends</h4>
-                </div>
-                <div class="p-6 bg-white rounded-xl shadow-sm border border-slate-100 hover:-translate-y-1 transition duration-200">
-                    <div class="text-4xl mb-4">&#x1F4DA;</div>
-                    <h4 class="font-bold text-slate-900">Research</h4>
-                </div>
-                <div class="p-6 bg-white rounded-xl shadow-sm border border-slate-100 hover:-translate-y-1 transition duration-200">
-                    <div class="text-4xl mb-4">&#x1F310;</div>
-                    <h4 class="font-bold text-slate-900">Languages</h4>
-                </div>
-                <div class="p-6 bg-white rounded-xl shadow-sm border border-slate-100 hover:-translate-y-1 transition duration-200">
-                    <div class="text-4xl mb-4">&#x2708;&#xFE0F;</div>
-                    <h4 class="font-bold text-slate-900">Traveling</h4>
-                </div>
-            </div>
-        </section>
-
-        <section id="resume" class="tab-content hidden text-center">
-            <h2 class="text-3xl font-bold text-slate-900 mb-6">Resume</h2>
-            <p class="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
-                Looking for a detailed breakdown of my technical skills, experience, and education? Download my full resume in PDF format.
+            <p class="timeline-desc">
+              <!-- ✏️ UPDATE: Brief description of your master's focus/thesis -->
+              Focused on software engineering, algorithms, and mobile computing. Thesis on scalable mobile architectures for enterprise applications.
             </p>
-            <div class="bg-white p-10 rounded-xl shadow-sm border border-slate-100 inline-block">
-                <div class="text-6xl mb-6">&#x1F4C4;</div>
-                <a href="https://drive.google.com/file/d/1GQdHVbG1swTZoGc2V2tVXFNMqcNT5eHt/view?usp=sharing" target="_blank" class="inline-block bg-slate-900 hover:bg-slate-800 text-white font-semibold py-3 px-8 rounded-lg transition duration-200">
-                    Download Resume (PDF)
-                </a>
-            </div>
-        </section>
-
-        <section id="contact" class="tab-content hidden">
-            <div class="max-w-2xl mx-auto text-center">
-                <h2 class="text-3xl font-bold text-slate-900 mb-6">Get In Touch</h2>
-                <p class="text-lg text-slate-600 mb-10">
-                    I'm always open to discussing new opportunities, architecture challenges, or collaborations on interesting iOS projects.
-                </p>
-                
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100 flex flex-col items-center gap-6">
-                    <a href="mailto:itejaskumarpatel@gmail.com" class="flex items-center gap-3 text-xl text-slate-700 hover:text-blue-600 transition">
-                        <span>&#x2709;&#xFE0F;</span> itejaskumarpatel@gmail.com
-                    </a>
-                    <a href="https://www.linkedin.com/in/tejas786u" target="_blank" class="flex items-center gap-3 text-xl text-slate-700 hover:text-blue-600 transition">
-                        <span>&#x1F4BC;</span> LinkedIn Profile
-                    </a>
-                    <a href="https://github.com/tejas786u" target="_blank" class="flex items-center gap-3 text-xl text-slate-700 hover:text-blue-600 transition">
-                        <span>&#x1F4BB;</span> GitHub Profile
-                    </a>
-                    <div class="flex items-center gap-3 text-xl text-slate-700">
-                        <span>&#x1F4CD;</span> Berlin, Germany
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="bg-slate-50 border-t border-gray-200 mt-auto">
-        <div class="max-w-6xl mx-auto px-4 py-6 text-center text-slate-500 text-sm">
-            &copy; <span id="year"></span> Tejaskumar Patel. All rights reserved.
+          </div>
         </div>
-    </footer>
 
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-title">Bachelor of Engineering — Computer Science</h3>
+                <!-- ✏️ UPDATE: University name -->
+                <p class="timeline-subtitle">Your University Name</p>
+              </div>
+              <!-- ✏️ UPDATE: Years -->
+              <span class="timeline-badge">20XX – 20XX</span>
+            </div>
+            <p class="timeline-desc">
+              <!-- ✏️ UPDATE: Brief description -->
+              Foundation in computer science, data structures, object-oriented programming, and software development lifecycle.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        const tabs = ['about', 'experience', 'skills', 'projects', 'education', 'certifications', 'interests', 'resume', 'contact'];
-        let chartRendered = false;
+  <!-- ========== CERTIFICATIONS ========== -->
+  <section class="section" id="certifications">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Continuous learning</span>
+        <h2 class="section-title">Online Certifications</h2>
+      </div>
 
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
+      <div class="cert-grid">
+        <!-- ✏️ UPDATE: Your certifications. Icons: fab fa-google, fab fa-meta, etc. -->
+        <div class="cert-card">
+          <div class="cert-logo">
+            <i class="fab fa-meta"></i>
+          </div>
+          <div class="cert-info">
+            <!-- ✏️ UPDATE: Cert name -->
+            <h3>Meta iOS Developer Certificate</h3>
+            <p class="cert-issuer">Meta • Coursera</p>
+            <!-- ✏️ UPDATE: Year -->
+            <p class="cert-date">20XX</p>
+          </div>
+          <!-- ✏️ UPDATE: Link to your certificate -->
+          <a href="#" target="_blank" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
+        </div>
 
-        function switchTab(activeTabId) {
-            tabs.forEach(tabId => {
-                document.getElementById(tabId).classList.add('hidden');
-                document.getElementById('nav-' + tabId).classList.remove('active-tab');
-            });
+        <div class="cert-card">
+          <div class="cert-logo">
+            <i class="fab fa-google"></i>
+          </div>
+          <div class="cert-info">
+            <!-- ✏️ UPDATE: Cert name -->
+            <h3>Google UX Design Certificate</h3>
+            <p class="cert-issuer">Google • Coursera</p>
+            <!-- ✏️ UPDATE: Year -->
+            <p class="cert-date">20XX</p>
+          </div>
+          <!-- ✏️ UPDATE: Link to your certificate -->
+          <a href="#" target="_blank" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
+        </div>
 
-            const activeSection = document.getElementById(activeTabId);
-            activeSection.classList.remove('hidden');
-            document.getElementById('nav-' + activeTabId).classList.add('active-tab');
+        <div class="cert-card">
+          <div class="cert-logo">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div class="cert-info">
+            <!-- ✏️ UPDATE: Cert name -->
+            <h3>iOS & Swift Bootcamp</h3>
+            <p class="cert-issuer">Udemy</p>
+            <!-- ✏️ UPDATE: Year -->
+            <p class="cert-date">20XX</p>
+          </div>
+          <!-- ✏️ UPDATE: Link to your certificate -->
+          <a href="#" target="_blank" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
+        </div>
 
-            // Lazy load the section content if it hasn't been fetched yet
-            if (activeSection.innerHTML.trim() === '') {
-                fetch('sections/' + activeTabId + '.html')
-                    .then(response => {
-                        if (!response.ok) throw new Error('Network response was not ok');
-                        return response.text();
-                    })
-                    .then(html => {
-                        activeSection.innerHTML = html;
-                        if (activeTabId === 'skills') {
-                            renderSkillsChart();
-                            chartRendered = true;
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error loading section:', error);
-                        activeSection.innerHTML = `<div class="text-center py-12 text-red-600 font-bold"><p>⚠️ Error loading section.</p><p class="text-sm mt-2 font-normal">If you are viewing this locally, please open it using a local web server (like VS Code Live Server) due to browser CORS security policies.</p></div>`;
-                    });
-            } else if (activeTabId === 'skills' && !chartRendered) {
-                 renderSkillsChart();
-                 chartRendered = true;
-            }
-            
-            // Close mobile menu if it is open
-            const mobileMenu = document.getElementById('mobile-menu');
-            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                mobileMenu.classList.add('hidden');
-            }
+        <!-- ✏️ UPDATE: Add more cert cards by copying the block above -->
+      </div>
+    </div>
+  </section>
 
-            window.scrollTo(0, 0);
-        }
+  <!-- ========== EXPERIENCE ========== -->
+  <section class="section section-alt" id="experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">10+ years of impact</span>
+        <h2 class="section-title">Experience</h2>
+      </div>
 
-        // Load initial tab content on page load
-        document.addEventListener("DOMContentLoaded", () => {
-            switchTab('about');
-        });
+      <div class="timeline">
 
-        function renderSkillsChart() {
-            const ctx = document.getElementById('skillsChart').getContext('2d');
-            new Chart(ctx, {
-                type: 'radar',
-                data: {
-                    labels: [
-                        'Swift / iOS SDK', 
-                        'App Architecture', 
-                        'UI/UX Implementation', 
-                        'CoreData/Networking', 
-                        'CI/CD & DevOps', 
-                        'Leadership/Mentoring'
-                    ],
-                    datasets: [{
-                        label: 'Proficiency Level',
-                        data: [95, 90, 85, 90, 80, 85],
-                        backgroundColor: 'rgba(37, 99, 235, 0.2)',
-                        borderColor: 'rgba(37, 99, 235, 1)',
-                        pointBackgroundColor: 'rgba(37, 99, 235, 1)',
-                        pointBorderColor: '#fff',
-                        pointHoverBackgroundColor: '#fff',
-                        pointHoverBorderColor: 'rgba(37, 99, 235, 1)',
-                        borderWidth: 2,
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        r: {
-                            angleLines: { color: 'rgba(0, 0, 0, 0.1)' },
-                            grid: { color: 'rgba(0, 0, 0, 0.1)' },
-                            pointLabels: {
-                                font: {
-                                    family: "'Outfit', sans-serif",
-                                    size: 13,
-                                    weight: '500'
-                                },
-                                color: '#475569'
-                            },
-                            ticks: {
-                                display: false,
-                                min: 0,
-                                max: 100,
-                                stepSize: 20
-                            }
-                        }
-                    },
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    return context.raw + '% Expertise';
-                                }
-                            }
-                        }
-                    }
-                }
-            });
-        }
-    </script>
+        <!-- ✏️ UPDATE: Most recent role first -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-title">Technical Lead — iOS</h3>
+                <p class="timeline-subtitle">Cognizant Technology Solutions</p>
+              </div>
+              <span class="timeline-badge">20XX – Present</span>
+            </div>
+            <!-- ✏️ UPDATE: Your role description / key achievements -->
+            <p class="timeline-desc">
+              Led a cross-functional iOS team of 5–6 engineers delivering the My Verizon for Business app — serving 1M+ business users. Enforced Clean Architecture, TDD, and CI/CD via GitHub Actions and Fastlane, achieving a 30% performance uplift and 25% reduction in post-release defects.
+            </p>
+            <div class="timeline-tags">
+              <!-- ✏️ UPDATE: Tech stack tags -->
+              <span class="tag">Swift</span>
+              <span class="tag">SwiftUI</span>
+              <span class="tag">MVVM</span>
+              <span class="tag">TDD</span>
+              <span class="tag">GitHub Actions</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-title">Team Lead — iOS</h3>
+                <p class="timeline-subtitle">Ebizz Infotech LLP</p>
+              </div>
+              <span class="timeline-badge">20XX – 20XX</span>
+            </div>
+            <p class="timeline-desc">
+              Led iOS development across 5+ simultaneous products including a Vedic education platform (50,000+ users) and a Saudi market e-commerce application. Established CI/CD pipelines and mentored junior engineers across multiple product tracks.
+            </p>
+            <div class="timeline-tags">
+              <span class="tag">Swift</span>
+              <span class="tag">UIKit</span>
+              <span class="tag">REST APIs</span>
+              <span class="tag">Jenkins</span>
+              <span class="tag">Fastlane</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-title">Senior iOS Developer</h3>
+                <p class="timeline-subtitle">Innovative Iteration Software Solutions</p>
+              </div>
+              <span class="timeline-badge">20XX – 20XX</span>
+            </div>
+            <p class="timeline-desc">
+              Diagnosed and resolved critical app instability, achieving a 90% crash rate reduction. Delivered performance-critical features and built robust data persistence layers using Core Data and local caching strategies.
+            </p>
+            <div class="timeline-tags">
+              <span class="tag">Swift</span>
+              <span class="tag">Objective-C</span>
+              <span class="tag">Core Data</span>
+              <span class="tag">Firebase</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ✏️ UPDATE: Add earlier roles by copying the block above -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What I've shipped</span>
+        <h2 class="section-title">Projects</h2>
+      </div>
+
+      <div class="projects-grid">
+        <!-- ✏️ UPDATE: Your projects. Add/remove cards as needed. -->
+        <div class="project-card featured">
+          <div class="project-image">
+            <!-- ✏️ UPDATE: Replace with actual screenshot path e.g. src="assets/projects/verizon.png" -->
+            <div class="project-img-placeholder">
+              <i class="fab fa-apple"></i>
+            </div>
+            <span class="project-badge">Enterprise</span>
+          </div>
+          <div class="project-content">
+            <!-- ✏️ UPDATE: Project name -->
+            <h3>My Verizon for Business</h3>
+            <!-- ✏️ UPDATE: Project description -->
+            <p>Enterprise iOS application serving 1M+ business users. Led greenfield SwiftUI module delivery — 30% faster than UIKit equivalent, with full CI/CD pipeline integration.</p>
+            <div class="project-tags">
+              <span class="tag">SwiftUI</span>
+              <span class="tag">MVVM</span>
+              <span class="tag">Combine</span>
+              <span class="tag">GitHub Actions</span>
+            </div>
+            <div class="project-links">
+              <!-- ✏️ UPDATE: Project links (GitHub, App Store, etc.) -->
+              <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+              <a href="#" class="project-link primary"><i class="fas fa-arrow-up-right-from-square"></i> App Store</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            <div class="project-img-placeholder">
+              <i class="fas fa-om"></i>
+            </div>
+            <span class="project-badge">EdTech</span>
+          </div>
+          <div class="project-content">
+            <!-- ✏️ UPDATE -->
+            <h3>Vedic Education Platform</h3>
+            <p>iOS app serving 50,000+ users across India for Vedic learning content, with offline support and multilingual UI.</p>
+            <div class="project-tags">
+              <span class="tag">Swift</span>
+              <span class="tag">UIKit</span>
+              <span class="tag">Core Data</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+              <a href="#" class="project-link primary"><i class="fas fa-arrow-up-right-from-square"></i> View</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            <div class="project-img-placeholder">
+              <i class="fas fa-cart-shopping"></i>
+            </div>
+            <span class="project-badge">E-Commerce</span>
+          </div>
+          <div class="project-content">
+            <!-- ✏️ UPDATE -->
+            <h3>Saudi Market E-Commerce App</h3>
+            <p>Full-featured e-commerce iOS application for the Saudi market with Arabic RTL support, payment gateway integration, and real-time inventory.</p>
+            <div class="project-tags">
+              <span class="tag">Swift</span>
+              <span class="tag">UIKit</span>
+              <span class="tag">REST APIs</span>
+              <span class="tag">RTL</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+              <a href="#" class="project-link primary"><i class="fas fa-arrow-up-right-from-square"></i> View</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ✏️ UPDATE: Add more project cards by copying a block above -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS ========== -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">My toolkit</span>
+        <h2 class="section-title">Skills</h2>
+      </div>
+
+      <div class="skills-container">
+
+        <!-- ✏️ UPDATE: Add/remove skill categories and items -->
+        <div class="skill-group">
+          <h3 class="skill-group-title"><i class="fab fa-apple"></i> iOS Development</h3>
+          <div class="skill-pills">
+            <span class="skill-pill expert">Swift</span>
+            <span class="skill-pill expert">SwiftUI</span>
+            <span class="skill-pill expert">UIKit</span>
+            <span class="skill-pill expert">Objective-C</span>
+            <span class="skill-pill advanced">Combine</span>
+            <span class="skill-pill advanced">async/await</span>
+            <span class="skill-pill advanced">Core Data</span>
+            <span class="skill-pill advanced">XCTest / TDD</span>
+            <span class="skill-pill learning">TCA</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-title"><i class="fas fa-layer-group"></i> Architecture & Patterns</h3>
+          <div class="skill-pills">
+            <span class="skill-pill expert">MVVM</span>
+            <span class="skill-pill expert">Clean Architecture</span>
+            <span class="skill-pill advanced">MVC</span>
+            <span class="skill-pill advanced">VIPER</span>
+            <span class="skill-pill advanced">Coordinator Pattern</span>
+            <span class="skill-pill learning">The Composable Architecture</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-title"><i class="fas fa-gears"></i> DevOps & Tools</h3>
+          <div class="skill-pills">
+            <span class="skill-pill expert">GitHub Actions</span>
+            <span class="skill-pill expert">Swift Package Manager</span>
+            <span class="skill-pill advanced">Fastlane</span>
+            <span class="skill-pill advanced">Jenkins</span>
+            <span class="skill-pill advanced">Firebase</span>
+            <span class="skill-pill advanced">Xcode Instruments</span>
+            <span class="skill-pill learning">Bitrise</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-title"><i class="fas fa-robot"></i> AI & Emerging</h3>
+          <div class="skill-pills">
+            <span class="skill-pill expert">Claude Code</span>
+            <span class="skill-pill expert">GitHub Copilot</span>
+            <span class="skill-pill advanced">Gemini</span>
+            <span class="skill-pill learning">KMP (Kotlin Multiplatform)</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-title"><i class="fas fa-language"></i> Languages</h3>
+          <div class="skill-pills">
+            <span class="skill-pill expert">English (Professional)</span>
+            <span class="skill-pill expert">Hindi (Native)</span>
+            <span class="skill-pill expert">Gujarati (Native)</span>
+            <span class="skill-pill learning">German (A1 — Learning)</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Skill Legend -->
+      <div class="skill-legend">
+        <span><span class="skill-pill expert mini">Expert</span></span>
+        <span><span class="skill-pill advanced mini">Advanced</span></span>
+        <span><span class="skill-pill learning mini">Learning</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== RESUME ========== -->
+  <section class="section" id="resume">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Full details</span>
+        <h2 class="section-title">Resume</h2>
+      </div>
+
+      <div class="resume-card">
+        <div class="resume-preview">
+          <div class="resume-icon">
+            <i class="fas fa-file-pdf"></i>
+          </div>
+          <div class="resume-meta">
+            <!-- ✏️ UPDATE: Update the filename and date as needed -->
+            <h3>Tejaskumar_Patel_iOS_CV.pdf</h3>
+            <p>Senior iOS Developer · 10+ Years Experience · Berlin, Germany</p>
+            <!-- ✏️ UPDATE: Last updated date -->
+            <span class="resume-updated">Last updated: May 2026</span>
+          </div>
+        </div>
+        <div class="resume-actions">
+          <!-- ✏️ UPDATE: Replace href with actual path to your PDF e.g. href="assets/resume.pdf" -->
+          <a href="assets/resume.pdf" download class="btn btn-primary">
+            <i class="fas fa-file-arrow-down"></i> Download PDF
+          </a>
+          <!-- ✏️ UPDATE: Replace href with a Google Drive or similar view link -->
+          <a href="#" target="_blank" class="btn btn-secondary">
+            <i class="fas fa-eye"></i> View Online
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Let's talk</span>
+        <h2 class="section-title">Contact Info</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="contact-intro">
+            <!-- ✏️ UPDATE: Your contact intro message -->
+            I'm currently open to Senior iOS Developer roles in Berlin and across Europe. Whether you want to discuss a role, a project, or just say hello — my inbox is always open.
+          </p>
+
+          <div class="contact-items">
+            <!-- ✏️ UPDATE: Your contact details -->
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <p class="contact-label">Email</p>
+                <!-- ✏️ UPDATE: Your email -->
+                <a href="mailto:itejaskumarpatel@gmail.com" class="contact-value">itejaskumarpatel@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-phone"></i></div>
+              <div>
+                <p class="contact-label">Phone</p>
+                <!-- ✏️ UPDATE: Your phone -->
+                <a href="tel:+4915510682854" class="contact-value">+49 155 1068 2854</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-location-dot"></i></div>
+              <div>
+                <p class="contact-label">Location</p>
+                <!-- ✏️ UPDATE: Your location -->
+                <p class="contact-value">Berlin, Germany 🇩🇪</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+              <div>
+                <p class="contact-label">LinkedIn</p>
+                <!-- ✏️ UPDATE: Your LinkedIn URL and display text -->
+                <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" class="contact-value">linkedin.com/in/YOUR_LINKEDIN</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fab fa-github"></i></div>
+              <div>
+                <p class="contact-label">GitHub</p>
+                <!-- ✏️ UPDATE: Your GitHub URL and username -->
+                <a href="https://github.com/YOUR_GITHUB" target="_blank" class="contact-value">github.com/YOUR_GITHUB</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-wrapper">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" placeholder="John Smith" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="john@company.com" required />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" placeholder="Senior iOS Developer Opportunity" />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" rows="5" placeholder="Hi Tejas, I came across your portfolio and..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary full-width">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+            <!-- ✏️ NOTE: To make this form functional, integrate with Formspree (free):
+                 1. Go to formspree.io and create a free account
+                 2. Create a form and get your endpoint URL
+                 3. Change <form class="contact-form" id="contactForm">
+                    to <form action="https://formspree.io/f/YOUR_ID" method="POST">
+                 4. Remove the JS form handler below or keep it for UX -->
+          </form>
+          <div class="form-success" id="formSuccess" style="display:none;">
+            <i class="fas fa-circle-check"></i>
+            <p>Message sent! I'll get back to you soon.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <p>
+        <!-- ✏️ UPDATE: Your name -->
+        Designed & built by <strong>Tejaskumar Patel</strong> · 2026
+      </p>
+      <p class="footer-sub">Senior iOS Developer · Berlin, Germany</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
 </body>
 </html>
