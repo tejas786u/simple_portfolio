@@ -8,12 +8,9 @@
    ✏️ UPDATE: Add/remove/edit the phrases below
    ============================================================ */
 const typingPhrases = [
-  "iOS Developer",
+  "iOS Engineer",
   "Swift Engineer",
-  "Technical Lead",
-  "SwiftUI Specialist",
-  "AI-Native Builder",
-  "Clean Architecture Advocate",
+  "Technical Lead"
 ];
 
 let phraseIndex = 0;

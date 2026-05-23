@@ -22,7 +22,8 @@
   --font-body: 'Nunito Sans', 'Nunito', sans-serif;
 
   /* Spacing */
-  --nav-height: 68px;
+  --banner-height: 40px;
+  --nav-height: calc(68px + var(--banner-height));
   --section-pad: 100px;
   --radius: 16px;
   --radius-sm: 10px;
@@ -89,6 +90,29 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ============================================================
    NAVBAR
    ============================================================ */
+.construction-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--banner-height);
+  background: #FFC107;
+  color: #1A1A1A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 800;
+  gap: 8px;
+  padding: 0 16px;
+}
+
+.construction-banner span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -97,7 +121,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 32px;
+  padding: var(--banner-height) 32px 0;
   background: var(--nav-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -1296,7 +1320,7 @@ a.contact-value:hover { color: var(--accent); }
   .resume-preview { flex-direction: column; text-align: center; }
 
   .section { padding: var(--section-pad) 20px; }
-  .navbar { padding: 0 20px; }
+  .navbar { padding: var(--banner-height) 20px 0; }
 }
 
 @media (max-width: 480px) {
