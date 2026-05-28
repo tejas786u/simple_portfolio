@@ -9,36 +9,31 @@
       <div class="contact-grid">
         <div class="contact-info">
           <p class="contact-intro">
-            <!-- ✏️ UPDATE: Your contact intro message -->
-            I'm currently open to Senior iOS Developer roles in Berlin and across Europe. Whether you want to discuss a role, a project, or just say hello — my inbox is always open.
+            {{contact.intro}}
           </p>
 
           <div class="contact-items">
-            <!-- ✏️ UPDATE: Your contact details -->
             <div class="contact-item">
               <div class="contact-icon"><i class="fas fa-envelope"></i></div>
               <div>
                 <p class="contact-label">Email</p>
-                <!-- ✏️ UPDATE: Your email -->
-                <a href="mailto:itejaskumarpatel@gmail.com" class="contact-value">itejaskumarpatel@gmail.com</a>
+                <a href="mailto:{{contact.email}}" class="contact-value">{{contact.email}}</a>
               </div>
             </div>
 
-            <div class="contact-item">
+            <!-- <div class="contact-item">
               <div class="contact-icon"><i class="fas fa-phone"></i></div>
               <div>
                 <p class="contact-label">Phone</p>
-                <!-- ✏️ UPDATE: Your phone -->
-                <a href="tel:+4915510682854" class="contact-value">+49 155 1068 2854</a>
+                <a href="tel:{{contact.phoneUrl}}" class="contact-value">{{contact.phoneDisplay}}</a>
               </div>
-            </div>
+            </div> -->
 
             <div class="contact-item">
               <div class="contact-icon"><i class="fas fa-location-dot"></i></div>
               <div>
                 <p class="contact-label">Location</p>
-                <!-- ✏️ UPDATE: Your location -->
-                <p class="contact-value">Berlin, Germany 🇩🇪</p>
+                <p class="contact-value">{{contact.location}}</p>
               </div>
             </div>
 
@@ -46,8 +41,7 @@
               <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
               <div>
                 <p class="contact-label">LinkedIn</p>
-                <!-- ✏️ UPDATE: Your LinkedIn URL and display text -->
-                <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" class="contact-value">linkedin.com/in/YOUR_LINKEDIN</a>
+                <a href="{{contact.linkedinUrl}}" target="_blank" class="contact-value">{{contact.linkedinDisplay}}</a>
               </div>
             </div>
 
@@ -55,8 +49,7 @@
               <div class="contact-icon"><i class="fab fa-github"></i></div>
               <div>
                 <p class="contact-label">GitHub</p>
-                <!-- ✏️ UPDATE: Your GitHub URL and username -->
-                <a href="https://github.com/YOUR_GITHUB" target="_blank" class="contact-value">github.com/YOUR_GITHUB</a>
+                <a href="{{contact.githubUrl}}" target="_blank" class="contact-value">{{contact.githubDisplay}}</a>
               </div>
             </div>
           </div>
@@ -64,32 +57,26 @@
 
         <!-- Contact Form -->
         <div class="contact-form-wrapper">
-          <form class="contact-form" id="contactForm">
+          <form class="contact-form" id="contactForm" action="{{contact.formEndpoint}}" method="POST">
             <div class="form-group">
               <label for="name">Your Name</label>
-              <input type="text" id="name" placeholder="John Smith" required />
+              <input type="text" id="name" name="name" placeholder="John Smith" required />
             </div>
             <div class="form-group">
               <label for="email">Email Address</label>
-              <input type="email" id="email" placeholder="john@company.com" required />
+              <input type="email" id="email" name="email" placeholder="john@company.com" required />
             </div>
             <div class="form-group">
               <label for="subject">Subject</label>
-              <input type="text" id="subject" placeholder="Senior iOS Developer Opportunity" />
+              <input type="text" id="subject" name="subject" placeholder="Senior iOS Developer Opportunity" />
             </div>
             <div class="form-group">
               <label for="message">Message</label>
-              <textarea id="message" rows="5" placeholder="Hi Tejas, I came across your portfolio and..." required></textarea>
+              <textarea id="message" name="message" rows="5" placeholder="Hi Tejas, I came across your portfolio and..." required></textarea>
             </div>
             <button type="submit" class="btn btn-primary full-width">
               <i class="fas fa-paper-plane"></i> Send Message
             </button>
-            <!-- ✏️ NOTE: To make this form functional, integrate with Formspree (free):
-                 1. Go to formspree.io and create a free account
-                 2. Create a form and get your endpoint URL
-                 3. Change <form class="contact-form" id="contactForm">
-                    to <form action="https://formspree.io/f/YOUR_ID" method="POST">
-                 4. Remove the JS form handler below or keep it for UX -->
           </form>
           <div class="form-success" id="formSuccess" style="display:none;">
             <i class="fas fa-circle-check"></i>

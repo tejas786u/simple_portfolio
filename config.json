@@ -1,0 +1,156 @@
+{
+  "about": {
+    "initials": "TP",
+    "avatar": "/profile.jpg",
+    "status": "Available for opportunities",
+    "greeting": "👋 Hello, I'm",
+    "name": "Tejaskumar Patel",
+    "rolePrefix": "Senior ",
+    "typingRoles": ["iOS Engineer", "Swift Engineer", "Technical Lead"],
+    "bio": "10+ years crafting scalable, enterprise-grade iOS applications that reach millions of users. Based in Berlin, Germany - blending deep Swift expertise with an AI-native development workflow.",
+    "socials": {
+      "github": "https://github.com/tejas786u",
+      "linkedin": "https://linkedin.com/in/tejas786u",
+      "email": "itejaskumarpatel@gmail.com"
+    }
+  },
+  "interests": [
+    { "icon": "fab fa-apple", "title": "iOS & Apple Ecosystem", "desc": "Passionate about crafting delightful, performant apps on Apple platforms using Swift and SwiftUI." },
+    { "icon": "fas fa-robot", "title": "AI-Assisted Development", "desc": "Exploring how AI tools like Claude Code and GitHub Copilot can accelerate engineering without sacrificing quality." },
+    { "icon": "fas fa-music", "title": "Music", "desc": "Playing violin and piano — music sharpens focus and fuels creative thinking in my development work." },
+    { "icon": "fas fa-plane-departure", "title": "Travelling", "desc": "Exploring new cultures and cities — currently calling Berlin home after relocating from India." },
+    { "icon": "fas fa-book-open", "title": "Reading", "desc": "Deep-diving into technical books, engineering blogs, and ideas that sit at the edge of technology and design." },
+    { "icon": "fas fa-cubes", "title": "Architecture & Clean Code", "desc": "Obsessed with MVVM, Clean Architecture, and patterns that make codebases maintainable at scale." }
+  ],
+  "education": [
+    { "degree": "Master of Engineering — Computer Science", "university": "Your University Name", "years": "20XX – 20XX", "desc": "Focused on software engineering, algorithms, and mobile computing. Thesis on scalable mobile architectures for enterprise applications." },
+    { "degree": "Bachelor of Engineering — Computer Science", "university": "Your University Name", "years": "20XX – 20XX", "desc": "Foundation in computer science, data structures, object-oriented programming, and software development lifecycle." }
+  ],
+  "certifications": [
+    { "icon": "fab fa-meta", "title": "Meta iOS Developer Certificate", "issuer": "Meta • Coursera", "year": "20XX", "link": "#" },
+    { "icon": "fab fa-google", "title": "Google UX Design Certificate", "issuer": "Google • Coursera", "year": "20XX", "link": "#" },
+    { "icon": "fas fa-graduation-cap", "title": "iOS & Swift Bootcamp", "issuer": "Udemy", "year": "20XX", "link": "#" }
+  ],
+  "experience": [
+    {
+      "role": "Technical Lead — iOS",
+      "company": "Cognizant Technology Solutions",
+      "years": "20XX – Present",
+      "desc": "Led a cross-functional iOS team of 5–6 engineers delivering the My Verizon for Business app — serving 1M+ business users. Enforced Clean Architecture, TDD, and CI/CD via GitHub Actions and Fastlane, achieving a 30% performance uplift and 25% reduction in post-release defects.",
+      "tags": ["Swift", "SwiftUI", "MVVM", "TDD", "GitHub Actions"]
+    },
+    {
+      "role": "Team Lead — iOS",
+      "company": "Ebizz Infotech LLP",
+      "years": "20XX – 20XX",
+      "desc": "Led iOS development across 5+ simultaneous products including a Vedic education platform (50,000+ users) and a Saudi market e-commerce application. Established CI/CD pipelines and mentored junior engineers across multiple product tracks.",
+      "tags": ["Swift", "UIKit", "REST APIs", "Jenkins", "Fastlane"]
+    },
+    {
+      "role": "Senior iOS Developer",
+      "company": "Innovative Iteration Software Solutions",
+      "years": "20XX – 20XX",
+      "desc": "Diagnosed and resolved critical app instability, achieving a 90% crash rate reduction. Delivered performance-critical features and built robust data persistence layers using Core Data and local caching strategies.",
+      "tags": ["Swift", "Objective-C", "Core Data", "Firebase"]
+    }
+  ],
+  "projects": [
+    {
+      "title": "My Verizon for Business",
+      "desc": "Enterprise iOS application serving 1M+ business users. Led greenfield SwiftUI module delivery — 30% faster than UIKit equivalent, with full CI/CD pipeline integration.",
+      "icon": "fab fa-apple",
+      "badge": "Enterprise",
+      "featured": true,
+      "tags": ["SwiftUI", "MVVM", "Combine", "GitHub Actions"],
+      "links": [
+        { "label": "Code", "url": "#", "icon": "fab fa-github", "primary": false },
+        { "label": "App Store", "url": "#", "icon": "fas fa-arrow-up-right-from-square", "primary": true }
+      ]
+    },
+    {
+      "title": "Vedic Students",
+      "desc": "iOS app serving 50,000+ users across India for Vedic learning content, with offline support and multilingual UI.",
+      "icon": "fas fa-om",
+      "badge": "EdTech",
+      "featured": false,
+      "tags": ["Swift", "UIKit", "Core Data"],
+      "links": [
+        { "label": "Code", "url": "#", "icon": "fab fa-github", "primary": false },
+        { "label": "View", "url": "#", "icon": "fas fa-arrow-up-right-from-square", "primary": true }
+      ]
+    },
+    {
+      "title": "Saudi Market E-Commerce App",
+      "desc": "Full-featured e-commerce iOS application for the Saudi market with Arabic RTL support, payment gateway integration, and real-time inventory.",
+      "icon": "fas fa-cart-shopping",
+      "badge": "E-Commerce",
+      "featured": false,
+      "tags": ["Swift", "UIKit", "REST APIs", "RTL"],
+      "links": [
+        { "label": "Code", "url": "#", "icon": "fab fa-github", "primary": false },
+        { "label": "View", "url": "#", "icon": "fas fa-arrow-up-right-from-square", "primary": true }
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "category": "iOS Development",
+      "icon": "fab fa-apple",
+      "items": [
+        { "name": "Swift", "level": "expert" },
+        { "name": "SwiftUI", "level": "expert" },
+        { "name": "UIKit", "level": "expert" },
+        { "name": "Objective-C", "level": "expert" },
+        { "name": "Combine", "level": "advanced" },
+        { "name": "async/await", "level": "advanced" },
+        { "name": "Core Data", "level": "advanced" },
+        { "name": "XCTest / TDD", "level": "advanced" },
+        { "name": "TCA", "level": "learning" }
+      ]
+    },
+    {
+      "category": "Architecture & Patterns",
+      "icon": "fas fa-layer-group",
+      "items": [
+        { "name": "MVVM", "level": "expert" },
+        { "name": "Clean Architecture", "level": "expert" },
+        { "name": "MVC", "level": "advanced" },
+        { "name": "VIPER", "level": "advanced" },
+        { "name": "Coordinator Pattern", "level": "advanced" }
+      ]
+    },
+    {
+      "category": "DevOps & Tools",
+      "icon": "fas fa-gears",
+      "items": [
+        { "name": "GitHub Actions", "level": "expert" },
+        { "name": "Swift Package Manager", "level": "expert" },
+        { "name": "Fastlane", "level": "advanced" }
+      ]
+    }
+  ],
+  "resume": {
+    "filename": "Tejaskumar_Patel_iOS_CV.pdf",
+    "subtitle": "Senior iOS Developer · 10+ Years Experience · Berlin, Germany",
+    "updated": "May 2026",
+    "pdfUrl": "https://drive.google.com/file/d/1GQdHVbG1swTZoGc2V2tVXFNMqcNT5eHt/view?usp=sharing",
+    "viewUrl": "https://drive.google.com/file/d/1GQdHVbG1swTZoGc2V2tVXFNMqcNT5eHt/view?usp=sharing"
+  },
+  "contact": {
+    "formEndpoint": "https://formspree.io/f/YOUR_FORM_ID",
+    "intro": "I'm currently open to Senior iOS Developer roles in Berlin and across Europe. Whether you want to discuss a role, a project, or just say hello - my inbox is always open.",
+    "email": "itejaskumarpatel@gmail.com",
+    "phoneDisplay": "+49 155 1068 2854",
+    "phoneUrl": "+4915510682854",
+    "location": "Berlin, Germany 🇩🇪",
+    "linkedinDisplay": "linkedin.com/in/tejas786u",
+    "linkedinUrl": "https://linkedin.com/in/tejas786u",
+    "githubDisplay": "github.com/tejas786u",
+    "githubUrl": "https://github.com/tejas786u"
+  },
+  "footer": {
+    "name": "Tejaskumar Patel",
+    "year": "2026",
+    "subtitle": "Senior iOS Developer · Berlin, Germany"
+  }
+}

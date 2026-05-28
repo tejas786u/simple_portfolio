@@ -20,7 +20,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
   <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Handlebars Templates Engine -->
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
 </head>
 <body>
 
@@ -32,8 +35,7 @@
     </div>
 
     <div class="nav-brand">
-      <!-- ✏️ UPDATE: Your initials or short name -->
-      <span class="brand-text">TP</span>
+      <span class="brand-text" id="navBrandText"></span>
     </div>
 
     <!-- Links are dynamically injected here by main.js based on the data-section sequence below -->
@@ -51,7 +53,6 @@
 
   <!-- Content will be dynamically loaded here by main.js -->
   <main id="main-content">
-    <!-- ✏️ UPDATE: Rearrange these lines to change the display order on the page -->
     <div data-section="about"></div>
     <div data-section="skills"></div>
     <div data-section="experience"></div>
@@ -64,15 +65,7 @@
   </main>
 
   <!-- ========== FOOTER ========== -->
-  <footer class="footer">
-    <div class="container">
-      <p>
-        <!-- ✏️ UPDATE: Your name -->
-        Designed & built by <strong>Tejaskumar Patel</strong> · 2026
-      </p>
-      <p class="footer-sub">Senior iOS Developer · Berlin, Germany</p>
-    </div>
-  </footer>
+  <footer class="footer" id="mainFooter"></footer>
 
   <script src="main.js"></script>
 </body>

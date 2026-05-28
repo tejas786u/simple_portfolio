@@ -12,20 +12,16 @@
             <i class="fas fa-file-pdf"></i>
           </div>
           <div class="resume-meta">
-            <!-- ✏️ UPDATE: Update the filename and date as needed -->
-            <h3>Tejaskumar_Patel_iOS_CV.pdf</h3>
-            <p>Senior iOS Developer · 10+ Years Experience · Berlin, Germany</p>
-            <!-- ✏️ UPDATE: Last updated date -->
-            <span class="resume-updated">Last updated: May 2026</span>
+            <h3>{{resume.filename}}</h3>
+            <p>{{resume.subtitle}}</p>
+            <span class="resume-updated">Last updated: {{resume.updated}}</span>
           </div>
         </div>
         <div class="resume-actions">
-          <!-- ✏️ UPDATE: Replace href with actual path to your PDF e.g. href="assets/resume.pdf" -->
-          <a href="assets/resume.pdf" download class="btn btn-primary">
+          <a href="{{resume.pdfUrl}}" download class="btn btn-primary">
             <i class="fas fa-file-arrow-down"></i> Download PDF
           </a>
-          <!-- ✏️ UPDATE: Replace href with a Google Drive or similar view link -->
-          <a href="#" target="_blank" class="btn btn-secondary">
+          <a href="{{resume.viewUrl}}" target="_blank" class="btn btn-secondary">
             <i class="fas fa-eye"></i> View Online
           </a>
         </div>

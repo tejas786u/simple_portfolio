@@ -7,44 +7,18 @@
       </div>
 
       <div class="timeline">
-        <!-- ✏️ UPDATE: Your education entries -->
+        {{#each education}}
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-card">
             <div class="timeline-header">
-              <div>
-                <h3 class="timeline-title">Master of Engineering — Computer Science</h3>
-                <!-- ✏️ UPDATE: University name -->
-                <p class="timeline-subtitle">Your University Name</p>
-              </div>
-              <!-- ✏️ UPDATE: Years -->
-              <span class="timeline-badge">20XX – 20XX</span>
+              <div><h3 class="timeline-title">{{this.degree}}</h3><p class="timeline-subtitle">{{this.university}}</p></div>
+              <span class="timeline-badge">{{this.years}}</span>
             </div>
-            <p class="timeline-desc">
-              <!-- ✏️ UPDATE: Brief description of your master's focus/thesis -->
-              Focused on software engineering, algorithms, and mobile computing. Thesis on scalable mobile architectures for enterprise applications.
-            </p>
+            <p class="timeline-desc">{{this.desc}}</p>
           </div>
         </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <div class="timeline-header">
-              <div>
-                <h3 class="timeline-title">Bachelor of Engineering — Computer Science</h3>
-                <!-- ✏️ UPDATE: University name -->
-                <p class="timeline-subtitle">Your University Name</p>
-              </div>
-              <!-- ✏️ UPDATE: Years -->
-              <span class="timeline-badge">20XX – 20XX</span>
-            </div>
-            <p class="timeline-desc">
-              <!-- ✏️ UPDATE: Brief description -->
-              Foundation in computer science, data structures, object-oriented programming, and software development lifecycle.
-            </p>
-          </div>
-        </div>
+        {{/each}}
       </div>
     </div>
   </section>

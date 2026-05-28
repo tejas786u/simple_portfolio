@@ -7,82 +7,28 @@
       </div>
 
       <div class="projects-grid">
-        <!-- ✏️ UPDATE: Your projects. Add/remove cards as needed. -->
-        <div class="project-card featured">
+        {{#each projects}}
+        <div class="project-card {{#if this.featured}}featured{{/if}}">
           <div class="project-image">
-            <!-- ✏️ UPDATE: Replace with actual screenshot path e.g. src="assets/projects/verizon.png" -->
-            <div class="project-img-placeholder">
-              <i class="fab fa-apple"></i>
-            </div>
-            <span class="project-badge">Enterprise</span>
+            <div class="project-img-placeholder"><i class="{{this.icon}}"></i></div>
+            <span class="project-badge">{{this.badge}}</span>
           </div>
           <div class="project-content">
-            <!-- ✏️ UPDATE: Project name -->
-            <h3>My Verizon for Business</h3>
-            <!-- ✏️ UPDATE: Project description -->
-            <p>Enterprise iOS application serving 1M+ business users. Led greenfield SwiftUI module delivery — 30% faster than UIKit equivalent, with full CI/CD pipeline integration.</p>
+            <h3>{{this.title}}</h3>
+            <p>{{this.desc}}</p>
             <div class="project-tags">
-              <span class="tag">SwiftUI</span>
-              <span class="tag">MVVM</span>
-              <span class="tag">Combine</span>
-              <span class="tag">GitHub Actions</span>
+              {{#each this.tags}}
+              <span class="tag">{{this}}</span>
+              {{/each}}
             </div>
             <div class="project-links">
-              <!-- ✏️ UPDATE: Project links (GitHub, App Store, etc.) -->
-              <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-              <a href="#" class="project-link primary"><i class="fas fa-arrow-up-right-from-square"></i> App Store</a>
+              {{#each this.links}}
+              <a href="{{this.url}}" class="project-link {{#if this.primary}}primary{{/if}}"><i class="{{this.icon}}"></i> {{this.label}}</a>
+              {{/each}}
             </div>
           </div>
         </div>
-
-        <div class="project-card">
-          <div class="project-image">
-            <div class="project-img-placeholder">
-              <i class="fas fa-om"></i>
-            </div>
-            <span class="project-badge">EdTech</span>
-          </div>
-          <div class="project-content">
-            <!-- ✏️ UPDATE -->
-            <h3>Vedic Education Platform</h3>
-            <p>iOS app serving 50,000+ users across India for Vedic learning content, with offline support and multilingual UI.</p>
-            <div class="project-tags">
-              <span class="tag">Swift</span>
-              <span class="tag">UIKit</span>
-              <span class="tag">Core Data</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-              <a href="#" class="project-link primary"><i class="fas fa-arrow-up-right-from-square"></i> View</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-image">
-            <div class="project-img-placeholder">
-              <i class="fas fa-cart-shopping"></i>
-            </div>
-            <span class="project-badge">E-Commerce</span>
-          </div>
-          <div class="project-content">
-            <!-- ✏️ UPDATE -->
-            <h3>Saudi Market E-Commerce App</h3>
-            <p>Full-featured e-commerce iOS application for the Saudi market with Arabic RTL support, payment gateway integration, and real-time inventory.</p>
-            <div class="project-tags">
-              <span class="tag">Swift</span>
-              <span class="tag">UIKit</span>
-              <span class="tag">REST APIs</span>
-              <span class="tag">RTL</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-              <a href="#" class="project-link primary"><i class="fas fa-arrow-up-right-from-square"></i> View</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- ✏️ UPDATE: Add more project cards by copying a block above -->
+        {{/each}}
       </div>
     </div>
   </section>

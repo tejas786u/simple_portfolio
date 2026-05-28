@@ -7,12 +7,7 @@
    1. TYPING ANIMATION
    ✏️ UPDATE: Add/remove/edit the phrases below
    ============================================================ */
-const typingPhrases = [
-  "iOS Engineer",
-  "Swift Engineer",
-  "Technical Lead"
-];
-
+let typingPhrases = [];
 let phraseIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -23,7 +18,7 @@ function typeEffect() {
   if (!el) return;
 
   const currentPhrase = typingPhrases[phraseIndex];
-
+  if (!currentPhrase) return;
   if (isDeleting) {
     el.textContent = currentPhrase.substring(0, charIndex - 1);
     charIndex--;
@@ -167,19 +162,33 @@ function initContactForm() {
 
   if (!form) return;
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const btn = form.querySelector("button[type='submit']");
+    const originalBtnText = btn.innerHTML;
     btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
     btn.disabled = true;
 
-    // ✏️ If you integrate Formspree, remove this setTimeout
-    // and let the form submit naturally (remove e.preventDefault())
-    setTimeout(() => {
-      form.style.display = "none";
-      success.style.display = "block";
-    }, 1500);
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        form.style.display = "none";
+        success.style.display = "block";
+        form.reset();
+      } else {
+        throw new Error("Network response was not ok");
+      }
+    } catch (error) {
+      alert("Oops! There was a problem submitting your form. Please try again.");
+      btn.innerHTML = originalBtnText;
+      btn.disabled = false;
+    }
   });
 }
 
@@ -225,7 +234,25 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 async function loadSections() {
-  // Find all placeholder divs in index.html that have a data-section attribute
+  let portfolioConfig = {};
+  
+  // 1. Fetch config.json
+  try {
+    const configRes = await fetch('config.json');
+    portfolioConfig = await configRes.json();
+  } catch (error) {
+    console.error("Failed to load config.json", error);
+    return;
+  }
+
+  // Update base HTML elements (Title, Navbar Initials, Footer)
+  document.title = `${portfolioConfig.about.name} — Portfolio`;
+  document.getElementById('navBrandText').textContent = portfolioConfig.about.initials;
+  typingPhrases = portfolioConfig.about.typingRoles;
+  
+  const footerHtml = `<div class="container"><p>Designed & built by <strong>${portfolioConfig.footer.name}</strong> · ${portfolioConfig.footer.year}</p><p class="footer-sub">${portfolioConfig.footer.subtitle}</p></div>`;
+  document.getElementById('mainFooter').innerHTML = footerHtml;
+
   const placeholders = document.querySelectorAll('[data-section]');
   const navLinksContainer = document.getElementById('navLinks');
   
@@ -244,8 +271,11 @@ async function loadSections() {
     try {
       const response = await fetch(`${section}.html`);
       if (response.ok) {
-        const html = await response.text();
-        placeholder.outerHTML = html; // Replaces the placeholder entirely with the fetched HTML
+        const rawHtml = await response.text();
+        // Compile the template with Handlebars and inject the JSON data
+        const template = Handlebars.compile(rawHtml);
+        const renderedHtml = template(portfolioConfig);
+        placeholder.outerHTML = renderedHtml; 
       }
     } catch (error) {
       console.error(`Error loading section ${section}:`, error);
