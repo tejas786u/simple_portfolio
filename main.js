@@ -219,13 +219,54 @@ function initSkillPills() {
    ============================================================ */
 document.addEventListener("DOMContentLoaded", () => {
   initTheme();
-  initNavbar();
   initHamburger();
+
+  loadSections();
+});
+
+async function loadSections() {
+  // Find all placeholder divs in index.html that have a data-section attribute
+  const placeholders = document.querySelectorAll('[data-section]');
+  const navLinksContainer = document.getElementById('navLinks');
+  
+  let navHTML = '';
+  let isFirst = true;
+  
+  for (const placeholder of placeholders) {
+    const section = placeholder.getAttribute('data-section');
+    
+    // 1. Build the navigation link dynamically (Capitalizes the first letter)
+    const title = section.charAt(0).toUpperCase() + section.slice(1);
+    navHTML += `<li><a href="#${section}" class="nav-link${isFirst ? ' active' : ''}">${title}</a></li>`;
+    isFirst = false;
+
+    // 2. Fetch and insert the section HTML
+    try {
+      const response = await fetch(`${section}.html`);
+      if (response.ok) {
+        const html = await response.text();
+        placeholder.outerHTML = html; // Replaces the placeholder entirely with the fetched HTML
+      }
+    } catch (error) {
+      console.error(`Error loading section ${section}:`, error);
+    }
+  }
+  
+  // Inject the dynamically built navigation links into the DOM
+  if (navLinksContainer) {
+    navLinksContainer.innerHTML = navHTML;
+  }
+  
+  // Initialize DOM-dependent features after sections are loaded
+  initNavbar();
+  initSmoothScroll();
   initScrollAnimations();
   initContactForm();
-  initSmoothScroll();
   initSkillPills();
-
+  
   // Start typing animation after short delay
   setTimeout(typeEffect, 800);
-});
+  
+  // Update navbar active link state initially
+  window.dispatchEvent(new Event('scroll'));
+}
