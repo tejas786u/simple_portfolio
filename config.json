@@ -27,68 +27,116 @@
     { "degree": "Bachelor of Engineering — Computer Science", "university": "Your University Name", "years": "20XX – 20XX", "desc": "Foundation in computer science, data structures, object-oriented programming, and software development lifecycle." }
   ],
   "certifications": [
-    { "icon": "fab fa-meta", "title": "Meta iOS Developer Certificate", "issuer": "Meta • Coursera", "year": "20XX", "link": "#" },
-    { "icon": "fab fa-google", "title": "Google UX Design Certificate", "issuer": "Google • Coursera", "year": "20XX", "link": "#" },
-    { "icon": "fas fa-graduation-cap", "title": "iOS & Swift Bootcamp", "issuer": "Udemy", "year": "20XX", "link": "#" }
+    { "icon": "fab fa-google", "title": "Google AI Essentials Certificate", "issuer": "Google • Coursera", "year": "2026", "link": "https://www.coursera.org/account/accomplishments/specialization/certificate/TX4QO5LME0VC" },
+    { "icon": "fab fa-meta", "title": "Meta iOS Developer Certificate", "issuer": "Meta • Coursera", "year": "2024", "link": "https://www.coursera.org/account/accomplishments/specialization/certificate/FUYQ8Q9KGQ3M" },
+    { "icon": "fab fa-google", "title": "Google Project Management Certificate", "issuer": "Google • Coursera", "year": "2023", "link": "https://www.coursera.org/account/accomplishments/specialization/certificate/C7G9LXJ9JNTU" },
+    { "icon": "fas fa-graduation-cap", "title": "iOS 16 Swift and SwiftUI - Complete iOS App Development", "issuer": "Udemy", "year": "2023", "link": "https://www.udemy.com/certificate/UC-b2f22a8f-dee3-4714-9257-f0c2c18ce271/" },
+    { "icon": "fas fa-trophy", "title": "Employee of the Quarter Award - Q4", "issuer": "Ebizz Infotech LLP", "year": "2022"},
+    { "icon": "fas fa-trophy", "title": "Leading Light Hero Award", "issuer": "Ebizz Infotech LLP", "year": "2021"}
   ],
   "experience": [
     {
-      "role": "Technical Lead — iOS",
+      "role": "Senior iOS Engineer / Technical Lead",
       "company": "Cognizant Technology Solutions",
-      "years": "20XX – Present",
-      "desc": "Led a cross-functional iOS team of 5–6 engineers delivering the My Verizon for Business app — serving 1M+ business users. Enforced Clean Architecture, TDD, and CI/CD via GitHub Actions and Fastlane, achieving a 30% performance uplift and 25% reduction in post-release defects.",
-      "tags": ["Swift", "SwiftUI", "MVVM", "TDD", "GitHub Actions"]
+      "years": "Dec 2023 - Dec 2025",
+      "desc": "Led the design and development of scalable iOS applications for the banking and communications sectors using Swift, SwiftUI, and modern architecture patterns. Managed and mentored a team of 5-6 engineers while remaining hands-on in development, delivered a SwiftUI module used by over 1 million users with a 30% performance improvement, reduced production crashes through proactive monitoring and fixes, and streamlined releases through CI/CD automation and feature flag-driven deployment strategies."
     },
     {
-      "role": "Team Lead — iOS",
+      "role": "Team Lead - iOS",
       "company": "Ebizz Infotech LLP",
-      "years": "20XX – 20XX",
-      "desc": "Led iOS development across 5+ simultaneous products including a Vedic education platform (50,000+ users) and a Saudi market e-commerce application. Established CI/CD pipelines and mentored junior engineers across multiple product tracks.",
-      "tags": ["Swift", "UIKit", "REST APIs", "Jenkins", "Fastlane"]
+      "years": "May 2020 - Sep 2023",
+      "desc": "As an iOS Team Lead, I built and mentored a team of 5 engineers, delivered 5+ consumer mobile apps, and helped grow user engagement by 15% through data-driven product improvements. I also introduced CI/CD pipelines, Firebase Analytics, A/B testing, and scalable API integrations to support reliable and efficient app delivery."
     },
     {
       "role": "Senior iOS Developer",
       "company": "Innovative Iteration Software Solutions",
-      "years": "20XX – 20XX",
-      "desc": "Diagnosed and resolved critical app instability, achieving a 90% crash rate reduction. Delivered performance-critical features and built robust data persistence layers using Core Data and local caching strategies.",
-      "tags": ["Swift", "Objective-C", "Core Data", "Firebase"]
+      "years": "Aug 2017 - Apr 2020",
+      "desc": "Developed and maintained multiple iOS applications using Swift and Objective-C, applying MVVM architecture and SOLID principles to build scalable and maintainable solutions. Successfully reduced production crash rates by up to 90%, modernized legacy code through Objective-C to Swift migration, and created reusable UI components aligned with Apple Human Interface Guidelines to deliver high-quality user experiences."
+    },
+    {
+      "role": "Sr. Executive Quality Assurance / Sr. Executive Developer",
+      "company": "Finlogic Technologies India Pvt. Ltd.",
+      "years": "Nov 2015 – July 2017",
+      "desc": "Started my career in Quality Assurance, ensuring high-quality delivery for large-scale stock market applications with a strong focus on reliability, accuracy, and performance. Contributed to maintaining 99%+ error-free systems while developing and supporting iOS applications, building a solid foundation in software quality, testing, and mobile application development."
+    },
+    {
+      "role": "iOS Developer",
+      "company": "Infusion Infotech",
+      "years": "Apr 2015 – Nov 2015",
+      "desc": "Started my iOS development career by contributing to multiple production applications, applying iOS best practices to improve app stability and user experience. Collaborated on revenue-generating products while continuously expanding my technical skills, including foundational Python programming and modern software development principles."
     }
   ],
   "projects": [
     {
       "title": "My Verizon for Business",
-      "desc": "Enterprise iOS application serving 1M+ business users. Led greenfield SwiftUI module delivery — 30% faster than UIKit equivalent, with full CI/CD pipeline integration.",
-      "icon": "fab fa-apple",
+      "desc": "Contributed to a large-scale enterprise iOS application serving over 1 million business users, enabling secure account, billing, device, and order management. Delivered high-performance UIKit and SwiftUI features, modernized legacy codebases to the latest Swift versions, and led the development of a greenfield SwiftUI module that achieved 30% faster delivery compared to traditional UIKit implementations. Collaborated closely with cross-functional teams to support continuous App Store releases, CI/CD automation, and scalable feature development.",
+      "icon": "fas fa-mobile-button",
       "badge": "Enterprise",
       "featured": true,
-      "tags": ["SwiftUI", "MVVM", "Combine", "GitHub Actions"],
+      "tags": ["UIKit", "SwiftUI", "MVVM", "URLSession", "PushNotification", "Dynamic Links", "LocalAuthentication", "API Integration", "App Clips", "Combine", "GitHub Actions"],
+      "links": [
+        { "label": "Code", "url": "#", "icon": "fab fa-github", "primary": false },
+        { "label": "App Store", "url": "https://apps.apple.com/in/app/my-verizon-for-business/id1110855592", "icon": "fab fa-apple", "primary": true }
+      ]
+    },
+    {
+      "title": "Vedic Students",
+      "desc": "Built and maintained iOS and Android applications delivering audio and video-based Vedic learning content to 50K+ users, including guru-led classes. Enhanced user experience with smooth media playback, offline support, multilingual UI, and performance-optimized, intuitive navigation ensuring reliable cross-platform learning delivery.",
+      "icon": "fas fa-om",
+      "badge": "EdTech",
+      "featured": false,
+      "tags": ["Swift", "UIKit", "Core Data", "Alamofire", "SwiftyJSON", "SDWebImage", "IQKeyboardManagerSwift", "MBProgressHUD", "AVPlayer", "Dynamic Links", "Social Media Login Integration"],
+      "links": [
+        { "label": "Code", "url": "#", "icon": "fab fa-github", "primary": false },
+        { "label": "App Store", "url": "https://apps.apple.com/in/app/vedic-students/id1531996328", "icon": "fab fa-apple", "primary": true }
+      ]
+    },
+    {
+      "title": "ChiniMandi",
+      "desc": "ChiniMandi news app provides you with the sugar industry news and articles in short and crisp format. It is useful for people who are always in a hurry. This is how you ChiniMandi news app provides you with the sugar industry news and articles in short and crisp format. It is useful for people who are always in a hurry. This is how yo This sugar news app provides you with information in English, Marathi, Hindi, and Gujarati languages. This app lets you enter the sugar industry world faster than any other source.",
+      "icon": "fas fa-newspaper",
+      "badge": "E-Commerce",
+      "featured": false,
+      "tags": ["Swift", "UIKit", "News API", "SDWebImage", "IQKeyboardManagerSwift", "Push Notifications", "SkeletonView", "Dynamic Links"],
       "links": [
         { "label": "Code", "url": "#", "icon": "fab fa-github", "primary": false },
         { "label": "App Store", "url": "#", "icon": "fas fa-arrow-up-right-from-square", "primary": true }
       ]
     },
     {
-      "title": "Vedic Students",
-      "desc": "iOS app serving 50,000+ users across India for Vedic learning content, with offline support and multilingual UI.",
-      "icon": "fas fa-om",
-      "badge": "EdTech",
-      "featured": false,
-      "tags": ["Swift", "UIKit", "Core Data"],
+      "title": "Meal ID: Meal Prep Planner",
+      "desc": "All-in-one fitness and health app that is considered the ultimate solution for individuals who train or looking to make a healthy nutritional shift to their diet. It's like having your personal dietician in the palm of your hand that will guide you on adapting a healthy eating well habit. Meal ID provides the tools necessary to be successful in your fitness journey. Unlike most nutrition or calorie counter apps, Meal ID provides is also great for hypertrophy training and has three awesome features to elevate your fitness experience.",
+      "icon": "fas fa-bowl-food",
+      "badge": "Health & Fitness",
+      "featured": true,
+      "tags": ["Swift", "In-App Purchase", "Subscription", "Apple Pay", "Firebase Firestore", "SQLite", "Charts", "HealthKit"],
       "links": [
         { "label": "Code", "url": "#", "icon": "fab fa-github", "primary": false },
-        { "label": "View", "url": "#", "icon": "fas fa-arrow-up-right-from-square", "primary": true }
+        { "label": "App Store", "url": "https://apps.apple.com/in/app/meal-id-meal-prep-planner/id1504099975", "icon": "fab fa-apple", "primary": true }
       ]
     },
     {
-      "title": "Saudi Market E-Commerce App",
-      "desc": "Full-featured e-commerce iOS application for the Saudi market with Arabic RTL support, payment gateway integration, and real-time inventory.",
-      "icon": "fas fa-cart-shopping",
-      "badge": "E-Commerce",
-      "featured": false,
-      "tags": ["Swift", "UIKit", "REST APIs", "RTL"],
+      "title": "Water Tracker Widget",
+      "desc": "A simple and intuitive iOS application that helps users track their daily water intake and stay hydrated. The app features a customizable widget for quick access to logging water consumption, setting hydration goals, and viewing progress throughout the day.",
+      "icon": "fas fa-tint",
+      "badge": "Habit Tracker",
+      "featured": true,
+      "tags": ["Swift", "SwiftUI", "WidgetKit", "UserDefaults", "Core Data"],
       "links": [
         { "label": "Code", "url": "#", "icon": "fab fa-github", "primary": false },
-        { "label": "View", "url": "#", "icon": "fas fa-arrow-up-right-from-square", "primary": true }
+        { "label": "App Store", "url": "https://apps.apple.com/in/app/water-tracker-widget/id1539860714", "icon": "fab fa-apple", "primary": true }
+      ]
+    },
+    {
+      "title": "Java Programming - Learn Code",
+      "desc": "iOS educational application used by 5K+ learners, delivering chapter-wise Core Java tutorials, interview Q&A, and interactive quizzes for exam and interview preparation, Features like code examples with outputs, and quiz-based assessments, increasing user engagement and learning retention, Designed a clean, beginner-friendly UIKit-based UI, ensuring high usability, performance, and content clarity for first-time programmers.",
+      "icon": "fab fa-java",
+      "badge": "EdTech",
+      "featured": false,
+      "tags": ["Swift", "UIKit", "Google Ads SDK", "CoreAnimations", "SQLite", "SDWebImage", "SkeletonView", "In-App Purchase", "Subscription", "LocalNotifications", "NSNotificationCenter", "ReachabilitySwift"],
+      "links": [
+        { "label": "Code", "url": "#", "icon": "fab fa-github", "primary": false },
+        { "label": "App Store", "url": "https://apps.apple.com/in/app/java-programming-learn-code/id1671259084", "icon": "fab fa-apple", "primary": true }
       ]
     }
   ],
@@ -101,11 +149,11 @@
         { "name": "SwiftUI", "level": "expert" },
         { "name": "UIKit", "level": "expert" },
         { "name": "Objective-C", "level": "expert" },
-        { "name": "Combine", "level": "advanced" },
-        { "name": "async/await", "level": "advanced" },
-        { "name": "Core Data", "level": "advanced" },
-        { "name": "XCTest / TDD", "level": "advanced" },
-        { "name": "TCA", "level": "learning" }
+        { "name": "iOS SDK", "level": "expert" },
+        { "name": "Swift Package Manager(SPM)", "level": "expert" },
+        { "name": "Cocoapods", "level": "expert" },
+        { "name": "Swift Concurrency(async/await)", "level": "advanced" },
+        { "name": "Combine", "level": "intermediate" }
       ]
     },
     {
@@ -114,27 +162,72 @@
       "items": [
         { "name": "MVVM", "level": "expert" },
         { "name": "Clean Architecture", "level": "expert" },
-        { "name": "MVC", "level": "advanced" },
-        { "name": "VIPER", "level": "advanced" },
-        { "name": "Coordinator Pattern", "level": "advanced" }
+        { "name": "MVC", "level": "expert" },
+        { "name": "SOLID Principles", "level": "expert" },
+        { "name": "Modularization", "level": "advanced" },
+        { "name": "Coordinator Pattern", "level": "advanced" },
+        { "name": "Singleton Pattern", "level": "advanced" },
+        { "name": "TCA", "level": "intermediate" }
       ]
     },
     {
-      "category": "DevOps & Tools",
+      "category": "Networking & Database",
+      "icon": "fas fa-network-wired",
+      "items": [
+        { "name": "RESTful APIs", "level": "expert" },
+        { "name": "URLSession", "level": "expert" },
+        { "name": "CoreData", "level": "expert" },
+        { "name": "SQLite", "level": "expert" },
+        { "name": "Keychain", "level": "expert" },
+        { "name": "UserDefaults", "level": "expert" },
+        { "name": "Firebase", "level": "advanced" },
+        { "name": "GraphQL", "level": "intermediate" }
+      ]
+    },
+    {
+      "category": "Performance & Debug",
+      "icon": "fas fa-tachometer-alt",
+      "items": [
+        { "name": "Unit Testing", "level": "expert" },
+        { "name": "XCTest", "level": "expert" },
+        { "name": "iOS App Lifecycle", "level": "expert" },
+        { "name": "Test-Driven Development", "level": "advanced" },
+        { "name": "UI Testing", "level": "advanced" },
+        { "name": "Instruments", "level": "advanced" },
+        { "name": "Performance Profiling", "level": "advanced" },
+        { "name": "A/B Testing", "level": "advanced" },
+        { "name": "SwiftLint", "level": "advanced" }
+      ]
+    },
+    {
+      "category": "Tools & CI/CD",
       "icon": "fas fa-gears",
       "items": [
+        { "name": "GitHub", "level": "expert" },
         { "name": "GitHub Actions", "level": "expert" },
-        { "name": "Swift Package Manager", "level": "expert" },
-        { "name": "Fastlane", "level": "advanced" }
+        { "name": "App Store Connect/Deployment", "level": "expert" },
+        { "name": "TestFlight", "level": "expert" },
+        { "name": "Fastlane", "level": "advanced" },
+        { "name": "Jenkins", "level": "advanced" }
+      ]
+    },
+    {
+      "category": "Process",
+      "icon": "fas fa-chart-gantt",
+      "items": [
+        { "name": "Agile/Scrum", "level": "expert" },
+        { "name": "Cross-functional Teams collaborations", "level": "expert" },
+        { "name": "Mentoring juniors", "level": "expert" },
+        { "name": "Code reviews", "level": "expert" }
       ]
     }
   ],
   "resume": {
     "filename": "Tejaskumar_Patel_iOS_CV.pdf",
     "subtitle": "Senior iOS Developer · 10+ Years Experience · Berlin, Germany",
-    "updated": "May 2026",
-    "pdfUrl": "https://drive.google.com/file/d/1GQdHVbG1swTZoGc2V2tVXFNMqcNT5eHt/view?usp=sharing",
-    "viewUrl": "https://drive.google.com/file/d/1GQdHVbG1swTZoGc2V2tVXFNMqcNT5eHt/view?usp=sharing"
+    "updated": "June 2026",
+    "pdfUrl": "https://drive.google.com/file/d/1AoYY1xvpgYgtSuwxpVpKVcFJwVhR0hGk/view?usp=sharing",
+    "viewUrl": "https://drive.google.com/file/d/1AoYY1xvpgYgtSuwxpVpKVcFJwVhR0hGk/view?usp=sharing"
   },
   "contact": {
     "formEndpoint": "https://formspree.io/f/mdajbplv",

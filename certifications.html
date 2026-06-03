@@ -15,7 +15,9 @@
             <p class="cert-issuer">{{this.issuer}}</p>
             <p class="cert-date">{{this.year}}</p>
           </div>
+          {{#if this.link}}
           <a href="{{this.link}}" target="_blank" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
+          {{/if}}
         </div>
         {{/each}}
       </div>

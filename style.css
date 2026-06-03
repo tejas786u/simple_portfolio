@@ -978,21 +978,27 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .skill-pill.expert {
+  background: linear-gradient(135deg, rgba(80, 255, 41, 0.25), rgba(107, 255, 58, 0.392));
+  border-color: rgba(80,255,41,0.3);
+  color: #008a0b;
+}
+
+.skill-pill.advanced {
   background: linear-gradient(135deg, rgba(41,121,255,0.15), rgba(68,138,255,0.08));
   border-color: rgba(41,121,255,0.3);
   color: var(--accent-light);
 }
 
-.skill-pill.advanced {
+.skill-pill.advanced-- {
   background: var(--bg-card);
   border-color: var(--border);
   color: var(--text-secondary);
 }
 
-.skill-pill.learning {
-  background: rgba(255,193,7,0.08);
+.skill-pill.intermediate {
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.286), rgba(255, 193, 7, 0.359));
   border-color: rgba(255,193,7,0.25);
-  color: #FFB300;
+  color: #ff9d00;
 }
 
 .skill-pill:hover {
