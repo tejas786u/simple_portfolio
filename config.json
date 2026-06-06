@@ -75,8 +75,7 @@
       "featured": true,
       "tags": ["UIKit", "SwiftUI", "MVVM", "URLSession", "PushNotification", "Dynamic Links", "LocalAuthentication", "API Integration", "App Clips", "Combine", "GitHub Actions"],
       "links": [
-        { "label": "Code", "url": "#", "icon": "fab fa-github", "primary": false },
-        { "label": "App Store", "url": "https://apps.apple.com/in/app/my-verizon-for-business/id1110855592", "icon": "fab fa-apple", "primary": true }
+        { "label": "App Store Link", "url": "https://apps.apple.com/in/app/my-verizon-for-business/id1110855592", "icon": "fab fa-apple", "primary": true }
       ]
     },
     {
@@ -87,8 +86,7 @@
       "featured": false,
       "tags": ["Swift", "UIKit", "Core Data", "Alamofire", "SwiftyJSON", "SDWebImage", "IQKeyboardManagerSwift", "MBProgressHUD", "AVPlayer", "Dynamic Links", "Social Media Login Integration"],
       "links": [
-        { "label": "Code", "url": "#", "icon": "fab fa-github", "primary": false },
-        { "label": "App Store", "url": "https://apps.apple.com/in/app/vedic-students/id1531996328", "icon": "fab fa-apple", "primary": true }
+        { "label": "App Store Link", "url": "https://apps.apple.com/in/app/vedic-students/id1531996328", "icon": "fab fa-apple", "primary": true }
       ]
     },
     {
@@ -99,8 +97,7 @@
       "featured": false,
       "tags": ["Swift", "UIKit", "News API", "SDWebImage", "IQKeyboardManagerSwift", "Push Notifications", "SkeletonView", "Dynamic Links"],
       "links": [
-        { "label": "Code", "url": "#", "icon": "fab fa-github", "primary": false },
-        { "label": "App Store", "url": "#", "icon": "fas fa-arrow-up-right-from-square", "primary": true }
+        { "label": "App Store Link", "url": "https://apps.apple.com/in/app/chinimandi/id1455310465", "icon": "fab fa-apple", "primary": true }
       ]
     },
     {
@@ -111,8 +108,7 @@
       "featured": true,
       "tags": ["Swift", "In-App Purchase", "Subscription", "Apple Pay", "Firebase Firestore", "SQLite", "Charts", "HealthKit"],
       "links": [
-        { "label": "Code", "url": "#", "icon": "fab fa-github", "primary": false },
-        { "label": "App Store", "url": "https://apps.apple.com/in/app/meal-id-meal-prep-planner/id1504099975", "icon": "fab fa-apple", "primary": true }
+        { "label": "App Store Link", "url": "https://apps.apple.com/in/app/meal-id-meal-prep-planner/id1504099975", "icon": "fab fa-apple", "primary": true }
       ]
     },
     {
@@ -123,8 +119,7 @@
       "featured": true,
       "tags": ["Swift", "SwiftUI", "WidgetKit", "UserDefaults", "Core Data"],
       "links": [
-        { "label": "Code", "url": "#", "icon": "fab fa-github", "primary": false },
-        { "label": "App Store", "url": "https://apps.apple.com/in/app/water-tracker-widget/id1539860714", "icon": "fab fa-apple", "primary": true }
+        { "label": "App Store Link", "url": "https://apps.apple.com/in/app/water-tracker-widget/id1539860714", "icon": "fab fa-apple", "primary": true }
       ]
     },
     {
@@ -135,8 +130,7 @@
       "featured": false,
       "tags": ["Swift", "UIKit", "Google Ads SDK", "CoreAnimations", "SQLite", "SDWebImage", "SkeletonView", "In-App Purchase", "Subscription", "LocalNotifications", "NSNotificationCenter", "ReachabilitySwift"],
       "links": [
-        { "label": "Code", "url": "#", "icon": "fab fa-github", "primary": false },
-        { "label": "App Store", "url": "https://apps.apple.com/in/app/java-programming-learn-code/id1671259084", "icon": "fab fa-apple", "primary": true }
+        { "label": "App Store Link", "url": "https://apps.apple.com/in/app/java-programming-learn-code/id1671259084", "icon": "fab fa-apple", "primary": true }
       ]
     }
   ],
