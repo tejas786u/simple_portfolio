@@ -290,13 +290,14 @@ async function loadSections() {
 
     // 2. Fetch and insert the section HTML
     try {
-      const response = await fetch(`${section}.html`);
+      const response = await fetch(`sections/${section}.html`);
       if (response.ok) {
         const rawHtml = await response.text();
         // Compile the template with Handlebars and inject the JSON data
         const template = Handlebars.compile(rawHtml);
         const renderedHtml = template(portfolioConfig);
-        placeholder.outerHTML = renderedHtml; 
+        placeholder.innerHTML = renderedHtml; 
+        placeholder.id = section;
       }
     } catch (error) {
       console.error(`Error loading section ${section}:`, error);
