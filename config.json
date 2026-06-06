@@ -17,14 +17,14 @@
   "interests": [
     { "icon": "fab fa-apple", "title": "iOS & Apple Ecosystem", "desc": "Passionate about crafting delightful, performant apps on Apple platforms using Swift and SwiftUI." },
     { "icon": "fas fa-robot", "title": "AI-Assisted Development", "desc": "Exploring how AI tools like Claude Code and GitHub Copilot can accelerate engineering without sacrificing quality." },
-    { "icon": "fas fa-music", "title": "Music", "desc": "Playing violin and piano — music sharpens focus and fuels creative thinking in my development work." },
-    { "icon": "fas fa-plane-departure", "title": "Travelling", "desc": "Exploring new cultures and cities — currently calling Berlin home after relocating from India." },
-    { "icon": "fas fa-book-open", "title": "Reading", "desc": "Deep-diving into technical books, engineering blogs, and ideas that sit at the edge of technology and design." },
-    { "icon": "fas fa-cubes", "title": "Architecture & Clean Code", "desc": "Obsessed with MVVM, Clean Architecture, and patterns that make codebases maintainable at scale." }
+    { "icon": "fas fa-cubes", "title": "Architecture & Clean Code", "desc": "Obsessed with MVVM, Clean Architecture, and patterns that make codebases maintainable at scale." },
+    { "icon": "fas fa-music", "title": "Music", "desc": "Playing violin and piano - music sharpens focus and fuels creative thinking in my development work." },
+    { "icon": "fas fa-plane-departure", "title": "Travelling", "desc": "Exploring new cultures and cities - currently calling Berlin home after relocating from India." },
+    { "icon": "fas fa-book-open", "title": "Reading", "desc": "Deep-diving into technical books, engineering blogs, and ideas that sit at the edge of technology and design. Also i love to read non-fiction books." }
   ],
   "education": [
-    { "degree": "Master of Engineering — Computer Science", "university": "Your University Name", "years": "20XX – 20XX", "desc": "Focused on software engineering, algorithms, and mobile computing. Thesis on scalable mobile architectures for enterprise applications." },
-    { "degree": "Bachelor of Engineering — Computer Science", "university": "Your University Name", "years": "20XX – 20XX", "desc": "Foundation in computer science, data structures, object-oriented programming, and software development lifecycle." }
+    { "degree": "Master of Engineering — Computer Science", "university": "Parul University", "years": "2018 - 2020", "desc": "DEEP LEARNING BASED FOOD IMAGE RECOGNITION : A SURVEY\nAuthors: Tejaskumar Patel, Dr. Chirag Patel, Prof. Ankita Gandhi\nIJRAR - International Journal of Research and Analytical Reviews (IJRAR), E-ISSN 2348-1269, P-ISSN 2349-5138, Volume 6, Issue 2, pp. 868-871, June 2019\nAvailable at: <a href=\"https://www.ijrar.org/papers/IJRAR2001982.pdf\" target=\"_blank\" style=\"color: var(--accent); text-decoration: underline;\">https://www.ijrar.org/papers/IJRAR2001982.pdf</a>" },
+    { "degree": "Bachelor of Engineering — Computer Science", "university": "Gujarat Technological University", "years": "2011 - 2014"}
   ],
   "certifications": [
     { "icon": "fab fa-google", "title": "Google AI Essentials Certificate", "issuer": "Google • Coursera", "year": "2026", "link": "https://www.coursera.org/account/accomplishments/specialization/certificate/TX4QO5LME0VC" },

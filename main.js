@@ -224,10 +224,31 @@ function initSkillPills() {
 }
 
 /* ============================================================
+   10. SCROLL TO TOP BUTTON
+   ============================================================ */
+function initScrollToTop() {
+  const scrollBtn = document.getElementById("scrollToTopBtn");
+  if (!scrollBtn) return;
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      scrollBtn.classList.add("show");
+    } else {
+      scrollBtn.classList.remove("show");
+    }
+  });
+
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+
+/* ============================================================
    9. INITIALISE ALL
    ============================================================ */
 document.addEventListener("DOMContentLoaded", () => {
   initTheme();
+  initScrollToTop();
   initHamburger();
 
   loadSections();
