@@ -5,9 +5,9 @@
     "status": "Available for opportunities",
     "greeting": "👋 Hello, I'm",
     "name": "Tejaskumar Patel",
-    "rolePrefix": "Senior ",
-    "typingRoles": ["iOS Engineer", "Swift Engineer", "Technical Lead"],
-    "bio": "10+ years crafting scalable, enterprise-grade iOS applications that reach millions of users. Based in Berlin, Germany - blending deep Swift expertise with an AI-native development workflow.",
+    "rolePrefix": "",
+    "typingRoles": ["iOS Engineer", "Swift Engineer", "Technical Lead", "Project Management", "AI-Assisted Development"],
+    "bio": "10+ years crafting scalable, enterprise-grade iOS applications that reach millions of users. Based in Surat, Gujarat, India - blending deep Swift expertise with an AI-native development workflow.",
     "socials": {
       "github": "https://github.com/tejas786u",
       "linkedin": "https://linkedin.com/in/tejas786u",
@@ -19,7 +19,7 @@
     { "icon": "fas fa-robot", "title": "AI-Assisted Development", "desc": "Exploring how AI tools like Claude Code and GitHub Copilot can accelerate engineering without sacrificing quality." },
     { "icon": "fas fa-cubes", "title": "Architecture & Clean Code", "desc": "Obsessed with MVVM, Clean Architecture, and patterns that make codebases maintainable at scale." },
     { "icon": "fas fa-music", "title": "Music", "desc": "Playing violin and piano - music sharpens focus and fuels creative thinking in my development work." },
-    { "icon": "fas fa-plane-departure", "title": "Travelling", "desc": "Exploring new cultures and cities - currently calling Berlin home after relocating from India." },
+    { "icon": "fas fa-plane-departure", "title": "Travelling", "desc": "Exploring new cultures and cities." },
     { "icon": "fas fa-book-open", "title": "Reading", "desc": "Deep-diving into technical books, engineering blogs, and ideas that sit at the edge of technology and design. Also i love to read non-fiction books." }
   ],
   "education": [
@@ -218,18 +218,18 @@
   ],
   "resume": {
     "filename": "Tejaskumar_Patel_iOS_CV.pdf",
-    "subtitle": "Senior iOS Developer · 10+ Years Experience · Berlin, Germany",
+    "subtitle": "Senior iOS Developer · 10+ Years Experience · Surat, Gujarat, India",
     "updated": "August 2026",
     "pdfUrl": "https://drive.google.com/file/d/1ZnDiKqH1PlWYlvY0vrB4mgnusGlvWpsc/view?usp=sharing",
     "viewUrl": "https://drive.google.com/file/d/1ZnDiKqH1PlWYlvY0vrB4mgnusGlvWpsc/view?usp=sharing"
   },
   "contact": {
     "formEndpoint": "https://formspree.io/f/mdajbplv",
-    "intro": "I'm currently open to Senior iOS Developer roles in Berlin and across Europe. Whether you want to discuss a role, a project, or just say hello - my inbox is always open.",
+    "intro": "I'm currently open to Senior iOS Developer/ Project Management roles in Surat and across India. Whether you want to discuss a role, a project, or just say hello - my inbox is always open.",
     "email": "itejaskumarpatel@gmail.com",
-    "phoneDisplay": "+49 155 1068 2854",
-    "phoneUrl": "+4915510682854",
-    "location": "Berlin, Germany 🇩🇪",
+    "phoneDisplay": "+91 96240 74097",
+    "phoneUrl": "+919624074097",
+    "location": "Surat, Gujarat, India",
     "linkedinDisplay": "linkedin.com/in/tejas786u",
     "linkedinUrl": "https://linkedin.com/in/tejas786u",
     "githubDisplay": "github.com/tejas786u",
@@ -238,6 +238,6 @@
   "footer": {
     "name": "Tejaskumar Patel",
     "year": "2026",
-    "subtitle": "Senior iOS Developer · Berlin, Germany"
+    "subtitle": "Senior iOS Developer · Project Management · Surat, Gujarat, India"
   }
 }
